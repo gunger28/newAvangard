@@ -1,0 +1,156 @@
+@charset "UTF-8";
+body {
+  background-color: white;
+  margin: 0 0;
+}
+
+header {
+  height: 100px;
+  width: 100%;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .logo {
+  height: 100%;
+  width: 110px;
+  background-image: url("../assets/logo/MA2.png");
+  background-size: cover;
+}
+
+header .menu-info {
+  display: inline-block;
+  height: 100%;
+  width: calc(100% - 110px);
+  background-color: #555555;
+}
+
+header .menu-info .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60%;
+  width: 100%;
+  background-color: red;
+}
+
+header .menu-info .info .block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 5px;
+  height: 100%;
+  width: 220px;
+}
+
+header .menu-info .info .block .ico_mail {
+  margin-top: 10px;
+  height: 80%;
+  width: 60px;
+  background-image: url("../assets/ico/Ресурс 2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+header .menu-info .info .block .ico_phone {
+  margin-top: 10px;
+  height: 70%;
+  width: 50px;
+  background-image: url("../assets/ico/Ресурс 1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+header .menu-info .info .block .text {
+  height: 100%;
+  width: calc(100% - 70px);
+  margin-left: 5px;
+  margin-top: 3px;
+}
+
+header .menu-info .info .block .text .title {
+  font-size: 14px;
+  margin-top: 10px;
+  height: 30%;
+  width: 100%;
+  color: #222222;
+  font-family: "Roboto", serif;
+}
+
+header .menu-info .info .block .text .desc {
+  margin-top: 3px;
+  height: 40%;
+  width: 100%;
+  color: white;
+  font-family: "Roboto", serif;
+}
+
+header .menu-info .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40%;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+}
+
+header .menu-info .menu .element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 130px;
+  margin-left: 5px;
+  height: 100%;
+  vertical-align: middle;
+}
+
+header .menu-info .menu .element img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 70%;
+  width: 30px;
+  background-size: contain;
+}
+
+header .menu-info .menu .element p {
+  margin: auto auto;
+  color: #1b1b1b;
+  text-transform: uppercase;
+  font-family: "Roboto", serif;
+  font-weight: 400;
+  font-size: 18px;
+  height: 18px;
+  line-height: 18px;
+  display: inline-block;
+  width: calc(100% - 65px);
+  -webkit-user-select: none;
+}
+
+header .menu-info .menu .element p:hover {
+  color: #ff4242;
+}
+
+.billboard {
+  position: relative;
+  display: inline-block;
+  height: 450px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.185);
+  background-image: url("../assets/previews/shutterstock_288224675.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.billboard .textUs {
+  position: absolute;
+  bottom: 0px;
+  height: 100px;
+  width: 100%;
+  background-color: red;
+}
+/*# sourceMappingURL=index.css.map */
