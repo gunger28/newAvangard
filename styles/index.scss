@@ -13,8 +13,16 @@ header {
     height: 100%;
     width: 110px;
     //  background-color: rgb(255, 0, 0);
-    background-image: url("../assets/logo/MA2.png");
-    background-size: cover;
+  display: inline-flex;
+
+img{
+  image-rendering: crisp-edges;
+margin: auto auto;
+  width: 105px;
+  height: 105px;
+ // background-color:rgb(17, 172, 172);
+}
+
   }
 
   .menu-info {
@@ -82,6 +90,17 @@ margin-top: 3px;
           }
         }
       }
+    
+.decor{
+width: 150px;
+height: 100%;
+background-color: rgb(255, 255, 255);
+
+clip-path: polygon(50% 0%, 100% 0%, 50% 100%, 0% 100%);
+
+}
+
+
     }
 
     .menu {
@@ -95,7 +114,7 @@ margin-top: 3px;
 
       
       .element {
-        display: flex;
+        display: inline-flex;
         height: 100%;
         width: 130px;
         margin-left: 5px;
@@ -124,7 +143,7 @@ margin-top: 3px;
           font-size: 18px;
           height: 18px;
           line-height: 18px;
-          display: inline-block;
+         
          // vertical-align: middle;
           width: calc(100% - 65px);
         
