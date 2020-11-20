@@ -1,195 +1,338 @@
+$main_color: #8d0002;
+
 body {
-  background-color: white;
-  margin: 0 0;
+    background-color: #f1f1f1;
+    margin: 0 0;
 }
 
 header {
-  height: 100px;
-  width: 100%;
-  background-color: rgb(255, 255, 255);
-  display: flex;
+    height: 100px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
 
-  .logo {
-    height: 100%;
-    width: 110px;
-    //  background-color: rgb(255, 0, 0);
-  display: inline-flex;
-
-img{
-  image-rendering: crisp-edges;
-margin: auto auto;
-  width: 105px;
-  height: 105px;
- // background-color:rgb(17, 172, 172);
-}
-
-  }
-
-  .menu-info {
-    display: inline-block;
-    height: 100%;
-    width: calc(100% - 110px);
-    background-color: rgb(85, 85, 85);
-
-    .info {
-      display: flex;
-      height: 60%;
-      width: 100%;
-      background-color: rgb(255, 0, 0);
-
-      .block {
-        display: flex;
-        margin-left: 5px;
+    .logo {
         height: 100%;
-        width: 220px;
-        //  background-color: rgb(117, 117, 117);
-
-        .ico_mail {
-          margin-top: 10px;
-          height: 80%;
-          width: 60px;
-          //  background-color: rgb(0, 0, 0);
-          background-image: url("../assets/ico/Ресурс\ 2.png");
-          background-size: contain;
-          background-repeat: no-repeat;
-        }
-
-        .ico_phone {
-          margin-top: 10px;
-          height: 70%;
-          width: 50px;
-          //  background-color: rgb(0, 0, 0);
-          background-image: url("../assets/ico/Ресурс\ 1.png");
-          background-size: contain;
-          background-repeat: no-repeat;
-        }
-
-        .text {
-          height: 100%;
-          width: calc(100% - 70px);
-       //   background-color: rgb(36, 109, 151);
-margin-left: 5px;
-margin-top: 3px;
-          .title {
-              font-size: 14px;
-            margin-top: 10px;
-            height: 30%;
-            width: 100%;
-           // background-color: rgb(90, 36, 151);
-            color: rgb(34, 34, 34);
-            font-family: "Roboto", serif;
-          }
-
-          .desc {
-              margin-top: 3px;
-            height: 40%;
-            width: 100%;
-           // background-color: rgb(49, 151, 36);
-            color: rgb(255, 255, 255);
-            font-family: "Roboto", serif;
-          }
-        }
-      }
-    
-.decor{
-width: 150px;
-height: 100%;
-background-color: rgb(255, 255, 255);
-
-clip-path: polygon(50% 0%, 100% 0%, 50% 100%, 0% 100%);
-
-}
-
-
-    }
-
-    .menu {
-      display: flex;
-      height: 40%;
-      width: 100%;
-      background-color: rgb(255, 255, 255);
-
-      text-align: center;
-
-
-      
-      .element {
+        width: 110px;
+        //  background-color: rgb(255, 0, 0);
         display: inline-flex;
-        height: 100%;
-        width: 130px;
-        margin-left: 5px;
-        height: 100%;
-        vertical-align: middle;
-
-        
 
         img {
-          display: flex;
-          height: 70%;
-          width: 30px;
-         // box-shadow: 4px 4px 8px 0px black;
-       
-        //  background-color: rgb(248, 12, 12);
-         // background-image: url("../assets/ico/Ресурс\ 8.png");
-          background-size: contain;
+            image-rendering: crisp-edges;
+            margin: auto auto;
+            width: 105px;
+            height: 105px;
+            // background-color:rgb(17, 172, 172);
+        }
+    }
+
+    .menu-info {
+        display: inline-block;
+        height: 100%;
+        width: calc(100% - 110px);
+        background-color: rgb(85, 85, 85);
+
+        .info {
+            display: flex;
+            height: 60%;
+            width: 100%;
+            background-color: $main_color;
+
+            .block {
+                display: flex;
+                margin-left: 5px;
+                height: 100%;
+                width: 220px;
+                //  background-color: rgb(117, 117, 117);
+
+                .ico_mail {
+                    margin-top: 10px;
+                    height: 80%;
+                    width: 60px;
+                    //  background-color: rgb(0, 0, 0);
+                    background-image: url("../assets/ico/Ресурс\ 2.png");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+
+                .ico_phone {
+                    margin-top: 10px;
+                    height: 70%;
+                    width: 50px;
+                    //  background-color: rgb(0, 0, 0);
+                    background-image: url("../assets/ico/Ресурс\ 1.png");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+
+                .text {
+                    height: 100%;
+                    width: calc(100% - 70px);
+                    //   background-color: rgb(36, 109, 151);
+                    margin-left: 5px;
+                    margin-top: 3px;
+                    .title {
+                        font-size: 14px;
+                        margin-top: 10px;
+                        height: 30%;
+                        width: 100%;
+                        // background-color: rgb(90, 36, 151);
+                        color: rgb(34, 34, 34);
+                        font-family: "Roboto", serif;
+                    }
+
+                    .desc {
+                        margin-top: 3px;
+                        height: 40%;
+                        width: 100%;
+                        // background-color: rgb(49, 151, 36);
+                        color: rgb(255, 255, 255);
+                        font-family: "Roboto", serif;
+                    }
+                }
+            }
+
+            .decor {
+                width: 150px;
+                height: 100%;
+                background-color: rgb(255, 255, 255);
+
+                clip-path: polygon(50% 0%, 100% 0%, 50% 100%, 0% 100%);
+            }
         }
 
-        p {
-            margin: auto auto;
-            color: rgb(27, 27, 27);
-          text-transform: uppercase;
-          font-family: "Roboto", serif;
-          font-weight: 400;
-          font-size: 18px;
-          height: 18px;
-          line-height: 18px;
-         
-         // vertical-align: middle;
-          width: calc(100% - 65px);
-        
--webkit-user-select: none;
+        .menu {
+            display: flex;
+            height: 40%;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
 
-          &:hover{
-           
-            color: rgb(255, 66, 66);
-            
+            text-align: center;
+
+            .element {
+                display: inline-flex;
+                height: 100%;
+                width: 130px;
+                margin-left: 5px;
+                height: 100%;
+                vertical-align: middle;
+
+                img {
+                    display: flex;
+                    height: 70%;
+                    width: 30px;
+                    // box-shadow: 4px 4px 8px 0px black;
+
+                    //  background-color: rgb(248, 12, 12);
+                    // background-image: url("../assets/ico/Ресурс\ 8.png");
+                    background-size: contain;
+                }
+
+                p {
+                    margin: auto auto;
+                    color: rgb(27, 27, 27);
+                    text-transform: uppercase;
+                    font-family: "Roboto", serif;
+                    font-weight: 400;
+                    font-size: 18px;
+                    height: 18px;
+                    line-height: 18px;
+
+                    // vertical-align: middle;
+                    width: calc(100% - 65px);
+
+                    -webkit-user-select: none;
+
+                    &:hover {
+                        color: rgb(255, 66, 66);
                     }
-    
+                }
+            }
+        }
     }
-      }
-    }
-  }
 }
 
 .billboard {
-  position: relative;
-  display: inline-block;
-  height: 450px;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.185);
-
- background-image: url("../assets/previews/shutterstock_288224675.jpg");
- background-size: cover;
- background-position: center;
- //filter: contrast(20%);
- 
-
-
-  .textUs {
-    position: absolute;
-    bottom: 0px;
-
-    height: 100px;
+    position: relative;
+    display: inline-block;
+    height: 450px;
     width: 100%;
-    background-color: rgb(255, 0, 0);
-   
-  
-  }
+    background-color: rgba(0, 0, 0, 0.185);
+
+    background-image: url("../assets/previews/shutterstock_288224675.jpg");
+    background-size: cover;
+    background-position: center;
+    //filter: contrast(20%);
+
+    .textUs {
+        position: absolute;
+        bottom: 0px;
+
+        height: 100px;
+        width: 100%;
+        background-color: $main_color;
+    }
+}
+
+.title {
+    margin: 0px;
+    //background-color: aquamarine;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    display: flex;
+
+    p {
+        margin: auto auto;
+        border-bottom: 3px solid rgb(116, 32, 32);
+        width: 30%;
+        font-family: "Roboto", serif;
+        text-transform: uppercase;
+        font-size: 30px;
+    }
+}
+
+.categories {
+    margin: auto auto;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 360px;
+
+    display: inline-flex;
+
+    .inside {
+        margin: auto auto;
+       // background-color: rgb(133, 36, 36);
+        width: 70%;
+        height: 90%;
+        display: flex;
+
+        .pos {
+            margin: auto auto;
+           // background-color: rgb(96, 133, 36);
+           box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.197);
+           border: 1px solid rgb(116, 116, 116);
+            width: 47%;
+            height: 100%;
+        }
+    }
 }
 
 
-.test{
+.cat_block{
+
+  margin: auto auto;
+ // background-color: rgb(31, 204, 59);
+  width: 100%;
+  height: 180px;
+
+  display: flexbox;
 
 
+  .block{
 
+    margin: auto auto;
+    //background-color: rgb(31, 112, 204);
+    width: 70%;
+    height: 50%;
+  
+    display: flex;
+
+    .cat{
+
+      margin: auto auto;
+      background-color: #3FA480;
+      width: 20%;
+      height: 50%;
+    
+      display: inline-flex;
+      p{
+        margin: auto auto;
+        text-align: center;
+        font-family: "Roboto", serif;
+        text-transform: uppercase;
+        color: white;
+font-size: 20px;
+line-height: 20px;
+height: 20px;
+
+      }
+
+
+    }
+
+  }
+
+}
+
+.product_card_line{
+  margin: 15px auto;
+  //background-color: #663fa4;
+  width: 90%;
+  height: 500px;
+
+display: flex;
+
+  .card{
+    margin: auto auto;
+    background-color: #605670;
+    width: 20%;
+    height: 100%;
+
+  }
+
+
+}
+
+.about_block{
+
+  margin: 15px auto;
+  background-color: #d6d6d6;
+  width: 100%;
+  height: 500px;
+
+display: inline-flex;
+
+
+.block{
+  
+  margin: auto auto;
+  background-color: #7e3f3f;
+  width: 70%;
+  height: 90%;
+
+display: flex;
+
+}
+
+
+}
+
+
+.cont_block{
+
+  margin: 15px auto;
+  //background-color: #ffffff;
+  width: 100%;
+  height: 500px;
+
+display: inline-flex;
+
+
+.block{
+  
+  margin: auto auto;
+  background-color: #7e3f3f;
+  width: 80%;
+  height: 90%;
+
+display: flex;
+
+}
+
+
+}
+
+
+.test {
 }
