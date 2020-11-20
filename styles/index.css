@@ -83,8 +83,9 @@ header .menu-info .info .block .text .title {
   margin-top: 10px;
   height: 30%;
   width: 100%;
-  color: #222222;
+  color: #a1a1a1;
   font-family: "Roboto", serif;
+  font-weight: 500;
 }
 
 header .menu-info .info .block .text .desc {
@@ -590,7 +591,6 @@ header .menu-info .menu .element p:hover {
 }
 
 .cont_block .block .contacts_block .block .left input {
-  text-decoration: none;
   margin: 5px 5px;
   text-decoration: none;
   width: 90%;
@@ -598,6 +598,7 @@ header .menu-info .menu .element p:hover {
   border-radius: 7px;
   font-size: 18px;
   word-wrap: break-word;
+  font-weight: 300;
   font-family: "Roboto", serif;
 }
 
@@ -632,10 +633,13 @@ header .menu-info .menu .element p:hover {
   width: 90%;
   height: 30px;
   border-radius: 7px;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "Roboto", serif;
 }
 
 .cont_block .block .contacts_block .block .right textarea {
-  text-decoration: none;
+  font-weight: 300;
   margin: 5px 5px;
   text-decoration: none;
   width: 90%;
@@ -643,6 +647,7 @@ header .menu-info .menu .element p:hover {
   border-radius: 7px;
   font-size: 18px;
   word-wrap: break-word;
+  font-size: 18px;
   font-family: "Roboto", serif;
 }
 /*# sourceMappingURL=index.css.map */
