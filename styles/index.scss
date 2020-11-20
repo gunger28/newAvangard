@@ -164,6 +164,33 @@ header {
     background-position: center;
     //filter: contrast(20%);
 
+.slogans_block{
+
+  width: 100%;
+  height: calc(100% - 100px);
+  background-color: rgba(0, 0, 0, 0.185);
+  
+
+display: flex;
+
+  .slogan{
+    color: white;
+  //  background-color: rgb(151, 8, 8);
+ 
+width: 25%;
+height: 40%;
+    margin:  auto auto;
+    text-transform: uppercase;
+    font-family: "Roboto", serif;
+    font-size: 40px;
+    text-shadow: 4px 4px 4px rgb(0, 0, 0);
+
+  }
+
+}
+
+
+
     .textUs {
         position: absolute;
         bottom: 0px;
@@ -171,6 +198,50 @@ header {
         height: 100px;
         width: 100%;
         background-color: $main_color;
+
+        display: inline-flex;
+
+        .block {
+            margin: auto auto;
+
+            height: 80%;
+            width: 85%;
+            //background-color: white;
+
+            display: flex;
+
+            .text {
+                margin: auto auto;
+
+                height: 80%;
+                width: 70%;
+                //   background-color: rgb(116, 44, 44);
+                color: white;
+                font-family: "Roboto", serif;
+                font-size: 25px;
+            }
+
+            .btn {
+                height: 55%;
+                width: 16%;
+                background-color: rgb(31, 31, 31);
+                margin: auto auto;
+                display: flex;
+
+                p {
+                    text-align: center;
+                    // background-color: rgb(177, 31, 31);
+
+                    height: 22px;
+                    width: 100%;
+                    margin: auto auto;
+                    color: white;
+                    font-family: "Roboto", serif;
+                    line-height: 22px;
+                    font-size: 22px;
+                }
+            }
+        }
     }
 }
 
@@ -183,8 +254,9 @@ header {
     display: flex;
 
     p {
+      color: $main_color;
         margin: auto auto;
-        border-bottom: 3px solid rgb(116, 32, 32);
+        border-bottom: 3px solid rgb(48, 48, 48);
         width: 30%;
         font-family: "Roboto", serif;
         text-transform: uppercase;
@@ -196,143 +268,211 @@ header {
     margin: auto auto;
     background-color: rgb(255, 255, 255);
     width: 100%;
-    height: 360px;
+    height: 320px;
 
     display: inline-flex;
 
     .inside {
         margin: auto auto;
-       // background-color: rgb(133, 36, 36);
-        width: 70%;
+        // background-color: rgb(133, 36, 36);
+        width: 80%;
         height: 90%;
         display: flex;
 
         .pos {
             margin: auto auto;
-           // background-color: rgb(96, 133, 36);
-           box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.197);
-           border: 1px solid rgb(116, 116, 116);
+            // background-color: rgb(96, 133, 36);
+            box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.197);
+            border: 1px solid rgb(116, 116, 116);
             width: 47%;
             height: 100%;
+
+            display: flex;
+
+            .photo{
+              margin: auto auto;
+width: 35%;
+height: 90%;
+background-color: rgb(96, 133, 36);
+background-size: cover;
+            }
+
+            .info{
+              margin: auto auto;
+              width: 60%;
+              height: 90%;
+              //background-color: rgb(36, 133, 101);
+
+              flex-wrap: wrap;
+
+              .name{
+
+                
+                width: 83%;
+                height: 15%;
+                background-color: rgb(189, 59, 59);
+
+                display: flex;
+
+                p{
+                  text-indent: 5px;
+                  width: 100%;
+                  height: 20px;
+                  font-size: 20px;
+                  line-height: 20px;
+                  font-weight: 300;
+              //    background-color: rgb(189, 59, 59);
+                  font-family: "Roboto", serif;
+                  color: white;
+                  margin: auto auto;
+                }
+              }
+
+              .desc{
+
+              
+                width: 100%;
+                height: 80%;
+                padding-top: 5px;
+                font-family: "Roboto", serif;
+text-indent: 30px;
+font-weight: 300;
+                
+             //   background-color: rgb(133, 36, 128);
+              }
+
+            }
         }
     }
 }
 
-
-.cat_block{
-
-  margin: auto auto;
- // background-color: rgb(31, 204, 59);
-  width: 100%;
-  height: 180px;
-
-  display: flexbox;
-
-
-  .block{
-
+.cat_block {
     margin: auto auto;
-    //background-color: rgb(31, 112, 204);
-    width: 70%;
-    height: 50%;
-  
+    // background-color: rgb(31, 204, 59);
+    width: 100%;
+    height: 180px;
+
+    display: flexbox;
+
+    .block {
+        margin: auto auto;
+        //background-color: rgb(31, 112, 204);
+        width: 70%;
+        height: 50%;
+
+        display: flex;
+
+        .cat {
+            margin: auto auto;
+            background-color: #3fa480;
+            width: 20%;
+            height: 50%;
+            box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.497);
+            display: inline-flex;
+            p {
+                margin: auto auto;
+                text-align: center;
+                font-family: "Roboto", serif;
+                text-transform: uppercase;
+                color: white;
+                font-size: 17px;
+                line-height: 17px;
+                height: 17px;
+            }
+        }
+    }
+}
+
+.product_card_line {
+    margin: 15px auto;
+    //background-color: #663fa4;
+    width: 90%;
+    height: 500px;
+
     display: flex;
 
-    .cat{
-
-      margin: auto auto;
-      background-color: #3FA480;
-      width: 20%;
-      height: 50%;
-    
-      display: inline-flex;
-      p{
+    .card {
         margin: auto auto;
-        text-align: center;
-        font-family: "Roboto", serif;
-        text-transform: uppercase;
-        color: white;
-font-size: 20px;
-line-height: 20px;
-height: 20px;
+        background-color: #d8d8d8;
+        width: 20%;
+        height: 100%;
 
-      }
+        display: inline-block;
+        .photo{
+          //background-color: #605670;
+          width: 100%;
+          height: 50%;
+          background-size: contain;
+          background-repeat: no-repeat;
 
+        }
 
+        .name{
+          background-color: #3FA480;
+          width: 100%;
+          height: 10%;
+          
+          display: flex;
+                p{
+                  margin: auto auto;
+                  text-align: center;
+                  width: 100%;
+                  line-height: 20px;
+          height: 20px;
+                  color: white;
+                  font-size: 20px;
+                  font-family: "Roboto", serif;
+                        text-transform: uppercase;
+
+                }
+
+        }
+
+        .desc{
+
+          background-color: #13012e;
+          width: 100%;
+          height: 40%;
+
+        }
     }
-
-  }
-
 }
 
-.product_card_line{
-  margin: 15px auto;
-  //background-color: #663fa4;
-  width: 90%;
-  height: 500px;
+.about_block {
+    margin: 15px auto;
+    background-color: #d6d6d6;
+    width: 100%;
+    height: 500px;
 
-display: flex;
+    display: inline-flex;
 
-  .card{
-    margin: auto auto;
-    background-color: #605670;
-    width: 20%;
-    height: 100%;
+    .block {
+        margin: auto auto;
+        background-color: #7e3f3f;
+        width: 70%;
+        height: 90%;
 
-  }
-
-
+        display: flex;
+    }
 }
 
-.about_block{
+.cont_block {
+    margin: 15px auto;
+    //background-color: #ffffff;
+    width: 100%;
+    height: 500px;
 
-  margin: 15px auto;
-  background-color: #d6d6d6;
-  width: 100%;
-  height: 500px;
+    display: inline-flex;
 
-display: inline-flex;
+    .block {
+        margin: auto auto;
+        background-color: #7e3f3f;
+        width: 80%;
+        height: 90%;
 
-
-.block{
-  
-  margin: auto auto;
-  background-color: #7e3f3f;
-  width: 70%;
-  height: 90%;
-
-display: flex;
-
+        display: flex;
+    }
 }
-
-
-}
-
-
-.cont_block{
-
-  margin: 15px auto;
-  //background-color: #ffffff;
-  width: 100%;
-  height: 500px;
-
-display: inline-flex;
-
-
-.block{
-  
-  margin: auto auto;
-  background-color: #7e3f3f;
-  width: 80%;
-  height: 90%;
-
-display: flex;
-
-}
-
-
-}
-
 
 .test {
 }

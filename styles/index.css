@@ -161,12 +161,74 @@ header .menu-info .menu .element p:hover {
   background-position: center;
 }
 
+.billboard .slogans_block {
+  width: 100%;
+  height: calc(100% - 100px);
+  background-color: rgba(0, 0, 0, 0.185);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.billboard .slogans_block .slogan {
+  color: white;
+  width: 25%;
+  height: 40%;
+  margin: auto auto;
+  text-transform: uppercase;
+  font-family: "Roboto", serif;
+  font-size: 40px;
+  text-shadow: 4px 4px 4px black;
+}
+
 .billboard .textUs {
   position: absolute;
   bottom: 0px;
   height: 100px;
   width: 100%;
   background-color: #8d0002;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.billboard .textUs .block {
+  margin: auto auto;
+  height: 80%;
+  width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.billboard .textUs .block .text {
+  margin: auto auto;
+  height: 80%;
+  width: 70%;
+  color: white;
+  font-family: "Roboto", serif;
+  font-size: 25px;
+}
+
+.billboard .textUs .block .btn {
+  height: 55%;
+  width: 16%;
+  background-color: #1f1f1f;
+  margin: auto auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.billboard .textUs .block .btn p {
+  text-align: center;
+  height: 22px;
+  width: 100%;
+  margin: auto auto;
+  color: white;
+  font-family: "Roboto", serif;
+  line-height: 22px;
+  font-size: 22px;
 }
 
 .title {
@@ -180,8 +242,9 @@ header .menu-info .menu .element p:hover {
 }
 
 .title p {
+  color: #8d0002;
   margin: auto auto;
-  border-bottom: 3px solid #742020;
+  border-bottom: 3px solid #303030;
   width: 30%;
   font-family: "Roboto", serif;
   text-transform: uppercase;
@@ -192,7 +255,7 @@ header .menu-info .menu .element p:hover {
   margin: auto auto;
   background-color: white;
   width: 100%;
-  height: 360px;
+  height: 320px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -200,7 +263,7 @@ header .menu-info .menu .element p:hover {
 
 .categories .inside {
   margin: auto auto;
-  width: 70%;
+  width: 80%;
   height: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -214,6 +277,55 @@ header .menu-info .menu .element p:hover {
   border: 1px solid #747474;
   width: 47%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.categories .inside .pos .photo {
+  margin: auto auto;
+  width: 35%;
+  height: 90%;
+  background-color: #608524;
+  background-size: cover;
+}
+
+.categories .inside .pos .info {
+  margin: auto auto;
+  width: 60%;
+  height: 90%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.categories .inside .pos .info .name {
+  width: 83%;
+  height: 15%;
+  background-color: #bd3b3b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.categories .inside .pos .info .name p {
+  text-indent: 5px;
+  width: 100%;
+  height: 20px;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 300;
+  font-family: "Roboto", serif;
+  color: white;
+  margin: auto auto;
+}
+
+.categories .inside .pos .info .desc {
+  width: 100%;
+  height: 80%;
+  padding-top: 5px;
+  font-family: "Roboto", serif;
+  text-indent: 30px;
+  font-weight: 300;
 }
 
 .cat_block {
@@ -234,9 +346,11 @@ header .menu-info .menu .element p:hover {
 
 .cat_block .block .cat {
   margin: auto auto;
-  background-color: #3FA480;
+  background-color: #3fa480;
   width: 20%;
   height: 50%;
+  -webkit-box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.497);
+          box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.497);
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -248,9 +362,9 @@ header .menu-info .menu .element p:hover {
   font-family: "Roboto", serif;
   text-transform: uppercase;
   color: white;
-  font-size: 20px;
-  line-height: 20px;
-  height: 20px;
+  font-size: 17px;
+  line-height: 17px;
+  height: 17px;
 }
 
 .product_card_line {
@@ -264,9 +378,44 @@ header .menu-info .menu .element p:hover {
 
 .product_card_line .card {
   margin: auto auto;
-  background-color: #605670;
+  background-color: #d8d8d8;
   width: 20%;
   height: 100%;
+  display: inline-block;
+}
+
+.product_card_line .card .photo {
+  width: 100%;
+  height: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.product_card_line .card .name {
+  background-color: #3FA480;
+  width: 100%;
+  height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.product_card_line .card .name p {
+  margin: auto auto;
+  text-align: center;
+  width: 100%;
+  line-height: 20px;
+  height: 20px;
+  color: white;
+  font-size: 20px;
+  font-family: "Roboto", serif;
+  text-transform: uppercase;
+}
+
+.product_card_line .card .desc {
+  background-color: #13012e;
+  width: 100%;
+  height: 40%;
 }
 
 .about_block {
