@@ -119,23 +119,23 @@ header .menu-info .menu .element {
   display: -ms-inline-flexbox;
   display: inline-flex;
   height: 100%;
-  width: 130px;
+  width: 150px;
   margin-left: 5px;
   height: 100%;
-  vertical-align: middle;
 }
 
 header .menu-info .menu .element img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 70%;
-  width: 30px;
+  height: 25px;
+  width: 25px;
   background-size: contain;
 }
 
 header .menu-info .menu .element p {
-  margin: auto auto;
+  margin: auto 0;
+  margin-left: 5px;
   color: #1b1b1b;
   text-transform: uppercase;
   font-family: "Roboto", serif;
