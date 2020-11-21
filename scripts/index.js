@@ -1,0 +1,119 @@
+
+
+window.onload = function(){
+anims();
+sendForm();
+    let cat_prom = document.getElementById('prom'); 
+    let cat_pishevoe = document.getElementById('pishevoe');
+
+
+
+    cat_pishevoe.onclick = function(){
+
+        window.open('../pages/pishevoe.html','_self',false);
+ 
+     }
+
+    cat_prom.onclick = function(){
+
+       window.open('../pages/pishevoe.html','_self',false);
+
+    }
+
+
+
+};
+
+function anims(){
+cat = document.querySelectorAll(".pos");
+best_products = document.querySelectorAll(".card");
+
+cat.forEach(element => {
+        
+    element.addEventListener('mouseover', function(event) {
+element.style.transform = "scale(0.94, 0.94)";
+element.style.backgroundColor = "#e0e0e0";
+    });
+
+
+    element.addEventListener('mouseout', function(event) {
+        element.style.transform = "scale(1,1)";
+        element.style.backgroundColor = "#ffffff";
+            });
+});
+
+best_products.forEach(element => {
+        
+    element.addEventListener('mouseover', function(event) {
+element.style.transform = "scale(0.98, 0.98)";
+//element.style.backgroundColor = "#e0e0e0";
+element.childNodes[3].style.backgroundColor = "#8d0002"
+    });
+
+
+    element.addEventListener('mouseout', function(event) {
+        element.style.transform = "scale(1,1)";
+       // element.style.backgroundColor = "#ffffff";
+        element.childNodes[3].style.backgroundColor = "#3fa480"
+            });
+});
+
+
+};
+      
+
+function sendForm() {
+    document.querySelector('#form').addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const formData = Object.fromEntries(new FormData(event.target).entries());
+        const {message, mail, phone, name} = formData;
+        const body = `name=${name}&mail=${mail}&phone=${phone}&message=${message}`;
+
+        url = '/php/mail.php';
+        options = {
+            method : 'POST',
+            body,
+            headers: {
+                "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+            }
+        };
+
+        const response = await fetch(url, options);
+        const status = await response.text();
+
+        if (+status === 1) {
+            alert('Заявка успешно отправлена!');
+            document.querySelectorAll('.input').forEach(input => input.value = '');
+            document.querySelector('textarea').value = '';
+        }
+        else alert('Произошла ошибка, пожалуйста попробуйте позже');
+    });
+};
+
+window.addEventListener('scroll',(event) => {
+    var cat = document.querySelectorAll('.cat');
+    var best_products = document.querySelectorAll('.card');
+
+    var y = scrollY;
+cat.forEach(element => {
+    
+    if (y<200) { element.style.opacity = "0" }
+    else {  element.style.opacity = "1"};
+
+});
+
+
+best_products.forEach(element => {
+    
+    if (y<600) { element.style.opacity = "0" ;
+    element.style.transform = "scale(0.5, 0.5)" ;
+}
+    else {  element.style.opacity = "1";
+    element.style.transform = "scale(1, 1)" ;
+};
+
+});
+
+   
+    });

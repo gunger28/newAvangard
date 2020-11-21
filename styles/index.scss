@@ -1,5 +1,11 @@
 $main_color: #8d0002;
 
+html{
+
+    scroll-behavior: smooth;
+}
+
+
 body {
     background-color: #f1f1f1;
     margin: 0 0;
@@ -118,6 +124,10 @@ header {
                 height: 100%;
                // vertical-align: middle;
 
+             
+
+               
+             
                 img {
                     display: flex;
                     height: 25px;
@@ -129,7 +139,8 @@ header {
                     background-size: contain;
                 }
 
-                p {
+                a {
+                    text-decoration: none;
                     margin: auto 0;
                     margin-left: 5px;
                     color: rgb(27, 27, 27);
@@ -169,21 +180,22 @@ header {
     .slogans_block {
         width: 100%;
         height: calc(100% - 100px);
-        background-color: rgba(0, 0, 0, 0.185);
+        background-color: rgba(255, 255, 255, 0.1);
 
         display: flex;
 
         .slogan {
             color: white;
             //  background-color: rgb(151, 8, 8);
-
+text-align: center;
             width: 25%;
             height: 40%;
             margin: auto auto;
             text-transform: uppercase;
-            font-family: "Roboto", serif;
-            font-size: 40px;
-            text-shadow: 4px 4px 4px rgb(0, 0, 0);
+            font-family: "Montserrat", sans-serif;
+            font-size: 46px;
+            text-shadow: 4px 4px 4px rgb(15, 15, 15);
+            font-weight: 500;
         }
     }
 
@@ -201,7 +213,7 @@ header {
             margin: auto auto;
 
             height: 80%;
-            width: 85%;
+            width: 80%;
             //background-color: white;
 
             display: flex;
@@ -223,11 +235,12 @@ header {
                 background-color: rgb(31, 31, 31);
                 margin: auto auto;
                 display: flex;
-
-                p {
+cursor: pointer;
+                a {
+                    text-decoration: none;
                     text-align: center;
                     // background-color: rgb(177, 31, 31);
-
+user-select: none;
                     height: 22px;
                     width: 100%;
                     margin: auto auto;
@@ -236,13 +249,20 @@ header {
                     line-height: 22px;
                     font-size: 22px;
                 }
+
+                transition-duration: .4s;
+                &:hover{
+                    background-color: rgb(51, 0, 0);
+transform: scale(0.95, 0.95);
+
+                }
             }
         }
     }
 }
 
 .title {
-    margin: 0px;
+    margin-top: 10px;
     //background-color: aquamarine;
     width: 100%;
     height: 50px;
@@ -271,19 +291,23 @@ header {
     .inside {
         margin: auto auto;
         // background-color: rgb(133, 36, 36);
-        width: 80%;
+        width: 70%;
         height: 90%;
         display: flex;
 
         .pos {
+           
+            -webkit-user-select: none;
             margin: auto auto;
             // background-color: rgb(96, 133, 36);
             box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.197);
-            border: 1px solid rgb(116, 116, 116);
+            border: 1px solid rgb(179, 179, 179);
             width: 47%;
             height: 100%;
 
             display: flex;
+
+            transition-duration: .5s;
 
             .photo {
                 margin: auto auto;
@@ -291,6 +315,7 @@ header {
                 height: 90%;
                 background-color: rgb(96, 133, 36);
                 background-size: cover;
+                box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.197);
             }
 
             .info {
@@ -304,7 +329,7 @@ header {
                 .name {
                     width: 83%;
                     height: 15%;
-                    background-color: rgb(189, 59, 59);
+                    background-color: rgb(223, 50, 50);
 
                     display: flex;
 
@@ -360,7 +385,11 @@ header {
             height: 50%;
             box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.497);
             display: inline-flex;
+            opacity: 0;
+
+            transition: all .6s ease 0s;
             p {
+                user-select: none;
                 margin: auto auto;
                 text-align: center;
                 font-family: "Roboto", serif;
@@ -377,7 +406,7 @@ header {
 .product_card_line {
     margin: 15px auto;
     //background-color: #663fa4;
-    width: 90%;
+    width: 70%;
     height: 500px;
 
     display: flex;
@@ -389,18 +418,24 @@ header {
         height: 100%;
         box-shadow: 4px 4px 18px 0px rgba(0, 0, 0, 0.25);
         display: inline-block;
+        transition: all 0.4s ease 0s;
+
         .photo {
             //background-color: #605670;
             width: 100%;
             height: 50%;
             background-size: contain;
             background-repeat: no-repeat;
+
+           
         }
 
         .name {
             background-color: #3fa480;
             width: 100%;
             height: 10%;
+
+            transition: all 0.4s ease 0s;
 
             display: flex;
             p {
@@ -515,7 +550,7 @@ header {
                     word-wrap: break-word;
                     max-height: 37%;
                     width: 95%;
-                    border-bottom: 3px solid black;
+                    border-bottom: 3px solid rgb(121, 0, 0);
                     font-family: "Roboto", serif;
                     font-size: 20px;
                     font-weight: 300;
@@ -530,26 +565,25 @@ header {
     //background-color: #ffffff;
     width: 100%;
     height: 500px;
-
     display: flex;
 
     .block {
         margin: auto auto;
         //   background-color: #3f7e54;
         width: 80%;
-        height: 90%;
+        height: 100%;
         display: flex;
         .map {
             margin: auto auto;
             background-color: #490000;
-            width: 55%;
+            width: 60%;
             height: 90%;
         }
 
         .contacts_block {
             margin: auto auto;
             // background-color: #ca0f0f;
-            width: 43%;
+            width: 33%;
             height: 90%;
 
             display: inline-flexbox;
@@ -600,6 +634,7 @@ header {
                         word-wrap: break-word;
                         font-weight: 300;
                         font-family: "Roboto", serif;
+                        border: 1px solid rgb(83, 83, 83);
                     }
 
                     p {
@@ -632,6 +667,7 @@ header {
                     display: inline-block;
 
                     input {
+                        border: 1px solid rgb(83, 83, 83);
                         margin: 5px 5px;
                         text-decoration: none;
                         width: 90%;
@@ -643,16 +679,41 @@ header {
                     }
 
                     textarea {
+                        border: 1px solid rgb(83, 83, 83);
                       font-weight: 300;
                         margin: 5px 5px;
                         text-decoration: none;
                         width: 90%;
-                        height: 80%;
+                        height: 70%;
                         border-radius: 7px;
                         font-size: 18px;
                         word-wrap: break-word;
                         font-size: 18px;
                         font-family: "Roboto", serif;
+                        resize: none;
+                    }
+
+                    .btn{
+                        outline: none;
+                        border: 1px solid rgb(255, 51, 0);
+                        background-color:  rgb(212, 75, 75);
+                        margin: 5px 5px;
+                        text-decoration: none;
+                        width: 90%;
+                        height: 40px;
+                        border-radius: 7px;
+                        font-size: 18px;
+                        font-weight: 300;
+                        font-family: "Roboto", serif;
+
+                        transition-duration: .4s;
+                        
+                        &:hover{
+                         cursor: pointer;
+                            background-color:  rgb(255, 20, 20);
+                            border: 1px solid rgb(255, 72, 0);
+
+                        }
                     }
                 }
             }

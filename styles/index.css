@@ -1,4 +1,8 @@
 @charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #f1f1f1;
   margin: 0 0;
@@ -133,7 +137,8 @@ header .menu-info .menu .element img {
   background-size: contain;
 }
 
-header .menu-info .menu .element p {
+header .menu-info .menu .element a {
+  text-decoration: none;
   margin: auto 0;
   margin-left: 5px;
   color: #1b1b1b;
@@ -147,7 +152,7 @@ header .menu-info .menu .element p {
   -webkit-user-select: none;
 }
 
-header .menu-info .menu .element p:hover {
+header .menu-info .menu .element a:hover {
   color: #ff4242;
 }
 
@@ -165,7 +170,7 @@ header .menu-info .menu .element p:hover {
 .billboard .slogans_block {
   width: 100%;
   height: calc(100% - 100px);
-  background-color: rgba(0, 0, 0, 0.185);
+  background-color: rgba(255, 255, 255, 0.1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -173,13 +178,15 @@ header .menu-info .menu .element p:hover {
 
 .billboard .slogans_block .slogan {
   color: white;
+  text-align: center;
   width: 25%;
   height: 40%;
   margin: auto auto;
   text-transform: uppercase;
-  font-family: "Roboto", serif;
-  font-size: 40px;
-  text-shadow: 4px 4px 4px black;
+  font-family: "Montserrat", sans-serif;
+  font-size: 46px;
+  text-shadow: 4px 4px 4px #0f0f0f;
+  font-weight: 500;
 }
 
 .billboard .textUs {
@@ -196,7 +203,7 @@ header .menu-info .menu .element p:hover {
 .billboard .textUs .block {
   margin: auto auto;
   height: 80%;
-  width: 85%;
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -219,10 +226,18 @@ header .menu-info .menu .element p:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  cursor: pointer;
+  -webkit-transition-duration: .4s;
+          transition-duration: .4s;
 }
 
-.billboard .textUs .block .btn p {
+.billboard .textUs .block .btn a {
+  text-decoration: none;
   text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   height: 22px;
   width: 100%;
   margin: auto auto;
@@ -232,8 +247,14 @@ header .menu-info .menu .element p:hover {
   font-size: 22px;
 }
 
+.billboard .textUs .block .btn:hover {
+  background-color: #330000;
+  -webkit-transform: scale(0.95, 0.95);
+          transform: scale(0.95, 0.95);
+}
+
 .title {
-  margin: 0px;
+  margin-top: 10px;
   width: 100%;
   height: 50px;
   text-align: center;
@@ -264,7 +285,7 @@ header .menu-info .menu .element p:hover {
 
 .categories .inside {
   margin: auto auto;
-  width: 80%;
+  width: 70%;
   height: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -272,15 +293,18 @@ header .menu-info .menu .element p:hover {
 }
 
 .categories .inside .pos {
+  -webkit-user-select: none;
   margin: auto auto;
   -webkit-box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.197);
           box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.197);
-  border: 1px solid #747474;
+  border: 1px solid #b3b3b3;
   width: 47%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
 }
 
 .categories .inside .pos .photo {
@@ -289,6 +313,8 @@ header .menu-info .menu .element p:hover {
   height: 90%;
   background-color: #608524;
   background-size: cover;
+  -webkit-box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.197);
+          box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.197);
 }
 
 .categories .inside .pos .info {
@@ -302,7 +328,7 @@ header .menu-info .menu .element p:hover {
 .categories .inside .pos .info .name {
   width: 83%;
   height: 15%;
-  background-color: #bd3b3b;
+  background-color: #df3232;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -355,9 +381,16 @@ header .menu-info .menu .element p:hover {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  opacity: 0;
+  -webkit-transition: all .6s ease 0s;
+  transition: all .6s ease 0s;
 }
 
 .cat_block .block .cat p {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   margin: auto auto;
   text-align: center;
   font-family: "Roboto", serif;
@@ -370,7 +403,7 @@ header .menu-info .menu .element p:hover {
 
 .product_card_line {
   margin: 15px auto;
-  width: 90%;
+  width: 70%;
   height: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -385,6 +418,8 @@ header .menu-info .menu .element p:hover {
   -webkit-box-shadow: 4px 4px 18px 0px rgba(0, 0, 0, 0.25);
           box-shadow: 4px 4px 18px 0px rgba(0, 0, 0, 0.25);
   display: inline-block;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
 }
 
 .product_card_line .card .photo {
@@ -398,6 +433,8 @@ header .menu-info .menu .element p:hover {
   background-color: #3fa480;
   width: 100%;
   height: 10%;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -513,7 +550,7 @@ header .menu-info .menu .element p:hover {
   word-wrap: break-word;
   max-height: 37%;
   width: 95%;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid #790000;
   font-family: "Roboto", serif;
   font-size: 20px;
   font-weight: 300;
@@ -531,7 +568,7 @@ header .menu-info .menu .element p:hover {
 .cont_block .block {
   margin: auto auto;
   width: 80%;
-  height: 90%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -540,13 +577,13 @@ header .menu-info .menu .element p:hover {
 .cont_block .block .map {
   margin: auto auto;
   background-color: #490000;
-  width: 55%;
+  width: 60%;
   height: 90%;
 }
 
 .cont_block .block .contacts_block {
   margin: auto auto;
-  width: 43%;
+  width: 33%;
   height: 90%;
   display: inline-flexbox;
 }
@@ -600,6 +637,7 @@ header .menu-info .menu .element p:hover {
   word-wrap: break-word;
   font-weight: 300;
   font-family: "Roboto", serif;
+  border: 1px solid #535353;
 }
 
 .cont_block .block .contacts_block .block .left p {
@@ -628,6 +666,7 @@ header .menu-info .menu .element p:hover {
 }
 
 .cont_block .block .contacts_block .block .right input {
+  border: 1px solid #535353;
   margin: 5px 5px;
   text-decoration: none;
   width: 90%;
@@ -639,15 +678,39 @@ header .menu-info .menu .element p:hover {
 }
 
 .cont_block .block .contacts_block .block .right textarea {
+  border: 1px solid #535353;
   font-weight: 300;
   margin: 5px 5px;
   text-decoration: none;
   width: 90%;
-  height: 80%;
+  height: 70%;
   border-radius: 7px;
   font-size: 18px;
   word-wrap: break-word;
   font-size: 18px;
   font-family: "Roboto", serif;
+  resize: none;
+}
+
+.cont_block .block .contacts_block .block .right .btn {
+  outline: none;
+  border: 1px solid #ff3300;
+  background-color: #d44b4b;
+  margin: 5px 5px;
+  text-decoration: none;
+  width: 90%;
+  height: 40px;
+  border-radius: 7px;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "Roboto", serif;
+  -webkit-transition-duration: .4s;
+          transition-duration: .4s;
+}
+
+.cont_block .block .contacts_block .block .right .btn:hover {
+  cursor: pointer;
+  background-color: #ff1414;
+  border: 1px solid #ff4800;
 }
 /*# sourceMappingURL=index.css.map */
