@@ -1,0 +1,506 @@
+@charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f1f1f1;
+  margin: 0 0;
+}
+
+header {
+  height: 100px;
+  width: 100%;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .logo {
+  height: 100%;
+  width: 110px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+header .logo img {
+  image-rendering: crisp-edges;
+  margin: auto auto;
+  width: 105px;
+  height: 105px;
+}
+
+header .menu-info {
+  display: inline-block;
+  height: 100%;
+  width: calc(100% - 110px);
+  background-color: #555555;
+}
+
+header .menu-info .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60%;
+  width: 100%;
+  background-color: #8d0002;
+}
+
+header .menu-info .info .block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 5px;
+  height: 100%;
+  width: 220px;
+}
+
+header .menu-info .info .block .ico_mail {
+  margin-top: 10px;
+  height: 80%;
+  width: 60px;
+  background-image: url("../assets/ico/Ресурс 2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+header .menu-info .info .block .ico_phone {
+  margin-top: 10px;
+  height: 70%;
+  width: 50px;
+  background-image: url("../assets/ico/Ресурс 1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+header .menu-info .info .block .text {
+  height: 100%;
+  width: calc(100% - 70px);
+  margin-left: 5px;
+  margin-top: 3px;
+}
+
+header .menu-info .info .block .text .title {
+  font-size: 14px;
+  margin-top: 10px;
+  height: 30%;
+  width: 100%;
+  color: #a1a1a1;
+  font-family: "Roboto", serif;
+  font-weight: 500;
+}
+
+header .menu-info .info .block .text .desc {
+  margin-top: 3px;
+  height: 40%;
+  width: 100%;
+  color: white;
+  font-family: "Roboto", serif;
+}
+
+header .menu-info .info .decor {
+  width: 150px;
+  height: 100%;
+  background-color: white;
+  -webkit-clip-path: polygon(50% 0%, 100% 0%, 50% 100%, 0% 100%);
+          clip-path: polygon(50% 0%, 100% 0%, 50% 100%, 0% 100%);
+}
+
+header .menu-info .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40%;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+}
+
+header .menu-info .menu .element {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 100%;
+  width: 150px;
+  margin-left: 5px;
+  height: 100%;
+}
+
+header .menu-info .menu .element img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 25px;
+  width: 25px;
+  background-size: contain;
+}
+
+header .menu-info .menu .element a {
+  text-decoration: none;
+  margin: auto 0;
+  margin-left: 5px;
+  color: #1b1b1b;
+  text-transform: uppercase;
+  font-family: "Roboto", serif;
+  font-weight: 400;
+  font-size: 18px;
+  height: 18px;
+  line-height: 18px;
+  width: calc(100% - 65px);
+  -webkit-user-select: none;
+}
+
+header .menu-info .menu .element a:hover {
+  color: #ff4242;
+}
+
+.billboard {
+  position: relative;
+  display: inline-block;
+  height: 450px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.185);
+  background-image: url("../assets/previews/shutterstock_288224675.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.billboard .slogans_block {
+  width: 100%;
+  height: calc(100% - 100px);
+  background-color: rgba(255, 255, 255, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.billboard .slogans_block .slogan {
+  color: white;
+  text-align: center;
+  width: 25%;
+  height: 40%;
+  margin: auto auto;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 46px;
+  text-shadow: 4px 4px 4px #0f0f0f;
+  font-weight: 500;
+}
+
+.billboard .textUs {
+  position: absolute;
+  bottom: 0px;
+  height: 100px;
+  width: 100%;
+  background-color: #8d0002;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.billboard .textUs .block {
+  margin: auto auto;
+  height: 80%;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.billboard .textUs .block .text {
+  margin: auto auto;
+  height: 80%;
+  width: 70%;
+  color: white;
+  font-family: "Roboto", serif;
+  font-size: 25px;
+}
+
+.billboard .textUs .block .btn {
+  height: 55%;
+  width: 16%;
+  background-color: #1f1f1f;
+  margin: auto auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -webkit-transition-duration: .4s;
+          transition-duration: .4s;
+}
+
+.billboard .textUs .block .btn a {
+  text-decoration: none;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  height: 22px;
+  width: 100%;
+  margin: auto auto;
+  color: white;
+  font-family: "Roboto", serif;
+  line-height: 22px;
+  font-size: 22px;
+}
+
+.billboard .textUs .block .btn:hover {
+  background-color: #330000;
+  -webkit-transform: scale(0.95, 0.95);
+          transform: scale(0.95, 0.95);
+}
+
+.title {
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.title p {
+  background-color: #d12d2d;
+  color: white;
+  margin: auto auto;
+  width: 30%;
+  font-family: "Roboto", serif;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.viewer {
+  margin-top: 10px;
+  background-color: white;
+  width: 100%;
+  height: 330px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.viewer .block {
+  margin: auto auto;
+  width: 60%;
+  height: 95%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.viewer .block .cat {
+  margin: auto auto;
+  width: 49%;
+  height: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.viewer .block .cat .photo {
+  margin: auto auto;
+  width: 49%;
+  height: 100%;
+  background-size: contain;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-repeat: no-repeat;
+}
+
+.viewer .block .cat .info {
+  margin: auto auto;
+  width: 49%;
+  height: 100%;
+  display: inline-block;
+}
+
+.viewer .block .cat .info .title {
+  margin: 0px;
+  background-color: #d42a2a;
+  width: 60%;
+  height: 36px;
+  font-weight: 300;
+  text-indent: 8px;
+  color: white;
+  font-family: "Roboto", serif;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.viewer .block .cat .info .props {
+  margin: 9px 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.viewer .block .cat .info .props .property {
+  font-family: "Roboto", serif;
+}
+
+.viewer .block .cat .info .props .text {
+  font-family: "Roboto", serif;
+  font-weight: 300;
+  margin-left: 8px;
+}
+
+.viewer .block .cat .info .text {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "Roboto", serif;
+}
+
+.viewer .block .line {
+  background-color: #860000;
+  width: 4px;
+  height: 80%;
+  margin: auto auto;
+}
+
+.viewer .block .order {
+  margin: auto auto;
+  width: 40%;
+  height: 95%;
+}
+
+.viewer .block .order .title {
+  margin: 0px;
+  background-color: #d42a2a;
+  width: 90%;
+  height: 36px;
+  font-weight: 300;
+  text-indent: 8px;
+  color: white;
+  font-family: "Roboto", serif;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.viewer .block .order .text {
+  margin: 10px;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "Roboto", serif;
+}
+
+.viewer .block .order .container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.viewer .block .order .container .left {
+  display: inline-block;
+  width: 50%;
+  height: 90%;
+}
+
+.viewer .block .order .container .left input {
+  border: 1px solid #535353;
+  margin: 5px 5px;
+  text-decoration: none;
+  width: 90%;
+  height: 30px;
+  border-radius: 7px;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "Roboto", serif;
+}
+
+.viewer .block .order .container .left .btn {
+  outline: none;
+  border: 1px solid #ff3300;
+  background-color: #d44b4b;
+  margin: 5px 5px;
+  text-decoration: none;
+  width: 90%;
+  height: 40px;
+  border-radius: 7px;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "Roboto", serif;
+  -webkit-transition-duration: .4s;
+          transition-duration: .4s;
+}
+
+.viewer .block .order .container .left .btn:hover {
+  cursor: pointer;
+  background-color: #ff1414;
+  border: 1px solid #ff4800;
+}
+
+.viewer .block .order .container .right {
+  display: inline-block;
+  width: 50%;
+  height: 60%;
+}
+
+.viewer .block .order .container .right input {
+  border: 1px solid #535353;
+  margin: 5px 5px;
+  text-decoration: none;
+  width: 90%;
+  height: 30px;
+  border-radius: 7px;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "Roboto", serif;
+}
+
+.viewer .block .order .container .right textarea {
+  border: 1px solid #535353;
+  font-weight: 300;
+  margin: 5px 5px;
+  text-decoration: none;
+  width: 90%;
+  height: 20%;
+  border-radius: 7px;
+  font-size: 18px;
+  word-wrap: break-word;
+  font-size: 18px;
+  font-family: "Roboto", serif;
+  resize: none;
+}
+
+.cards_block {
+  margin-top: 10px;
+  width: 100%;
+  height: 300px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cards_block .block {
+  margin: auto auto;
+  width: 60%;
+  height: 95%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cards_block .block .card {
+  margin-left: 2.5%;
+  border-radius: 20px;
+  background-color: #a7a7a7;
+  width: 17%;
+  height: 95%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=category.css.map */

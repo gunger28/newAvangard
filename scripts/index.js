@@ -3,6 +3,7 @@
 window.onload = function(){
 anims();
 sendForm();
+
     let cat_prom = document.getElementById('prom'); 
     let cat_pishevoe = document.getElementById('pishevoe');
 
@@ -16,7 +17,7 @@ sendForm();
 
     cat_prom.onclick = function(){
 
-       window.open('../pages/pishevoe.html','_self',false);
+       window.open('../pages/texnolog.html','_self',false);
 
     }
 
@@ -96,10 +97,25 @@ window.addEventListener('scroll',(event) => {
     var best_products = document.querySelectorAll('.card');
 
     var y = scrollY;
-cat.forEach(element => {
+    cof = 0;
+
+    cof = 0.002 * y + cof;
+
+    if(cof > 1){
+        cof = 1;
+    }
     
-    if (y<200) { element.style.opacity = "0" }
-    else {  element.style.opacity = "1"};
+cat.forEach(element => {
+
+    
+    
+
+    if (y<200) { element.style.opacity = "0"
+}
+    else {  
+        element.style.opacity =  cof.toString();
+    console.log(cof.toString())
+    };
 
 });
 
