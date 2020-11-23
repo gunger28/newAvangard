@@ -79,15 +79,43 @@ function redirect(){
         
      card.addEventListener('click', function(event) {
 
-var name = card.childNodes[3].textContent ;
+var name = card.childNodes[3].childNodes[1].textContent;
+
 console.log(name);
+console.log("сушка/рассев");
 
 
 //send("name");
 
-if(name = "сушка/рассев"){
-    window.open('/pages/sushka.html','_self',false);
+if(name === "сушка/рассев"){
+    console.log(name);
+    window.open('/pages/products/pishevoe/sushka.html','_self',false);
 }
+
+if(name === "сироповарки"){
+    window.open('/pages/products/pishevoe/sirop.html','_self',false);
+}
+
+if(name === "ёмкости"){
+    window.open('/pages/products/pishevoe/emkost.html','_self',false);
+}
+
+if(name === "дозирование/смешивание"){
+    window.open('/pages/products/pishevoe/dozir_smesh.html','_self',false);
+}
+
+if(name === "пивное оборудование"){
+    window.open('/pages/products/pishevoe/pivnoe.html','_self',false);
+}
+
+if(name === "станции затаривания"){
+    window.open('/pages/products/pishevoe/zatar.html','_self',false);
+}
+
+
+//---------------TEXNOLOG-------------------
+
+
 
 
 

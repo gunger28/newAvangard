@@ -122,7 +122,7 @@ cat.forEach(element => {
 
 best_products.forEach(element => {
     
-    if (y<600) { element.style.opacity = "0" ;
+    if (y<400) { element.style.opacity = "0" ;
     element.style.transform = "scale(0.5, 0.5)" ;
 }
     else {  element.style.opacity = "1";

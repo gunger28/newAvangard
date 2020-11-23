@@ -27,12 +27,12 @@
     />
   </head>
   <body>
-    <script type="text/javascript" src="/scripts/categories.js"></script>
+    <script type="text/javascript" src="/scripts/product.js"></script>
 
     <header>
       <div class="logo">
         <a href="/index.html">
-          <img src="../assets/logo/MA2.png" alt="" />
+          <img src="/assets/logo/MA2.png" alt="" />
         </a>
       </div>
 
@@ -74,7 +74,7 @@
           <div class="element">
             <img src="/assets/ico/test2.png" vspace="5px" alt="" />
 
-            <a href="/pages/catalog.html">каталог</a>
+            <a href="/index.html#catalog">каталог</a>
           </div>
 
           <div class="element">
@@ -102,31 +102,33 @@
     <div class="viewer">
       <div class="block">
         <div class="cat">
-          <div class="photo"  style="background-image: url(/assets/previews/vibro.png)">
-        </div>
+          <div
+            class="photo"
+            id="photo"
+            style="background-image: url(/assets/previews/vibro.png)"
+          ></div>
 
           <div class="info">
-            <div class="title">СМА-01</div>
+            <div class="title" id="title">СМА-01</div>
 
             <div class="props">
               <div class="property">Габариты:</div>
-              <div class="text"></div>
+              <div class="text" id="size"></div>
             </div>
             <div class="props">
               <div class="property">Вес:</div>
-              <div class="text"></div>
+              <div class="text" id="mass"></div>
             </div>
             <div class="props">
               <div class="property">Производительность:</div>
-              <div class="text"></div>
+              <div class="text" id="impact"></div>
             </div>
-              <div class="props">
+            <div class="props">
               <div class="property">Мощность:</div>
-              <div class="text"></div>
+              <div class="text" id="moshnost"></div>
             </div>
-            <div class="text">
-                Варить чето там химичесое и смешивать всякое химичесое и тд.
-
+            <div class="text" id="desc">
+              Варить чето там химичесое и смешивать всякое химичесое и тд.
             </div>
           </div>
         </div>
@@ -134,44 +136,51 @@
         <div class="line"></div>
 
         <div class="order">
-<div class="title">
-Оставить заявку
-</div>
+          <div class="title">Оставить заявку</div>
 
-<div class="text">
-    Если у вас имеются вопросы или вы хотите сделать заказ, то заполните и отправьте форму или просто позвоните нам.
-    </div>
-<div class="container">
-    <div class="left">
-        <input type="text" placeholder="Имя.">
-        <input type="text" placeholder="Тел.">
-        <input type="submit" class="btn">
-    </div>
+          <div class="text">
+            Если у вас имеются вопросы или вы хотите сделать заказ, то заполните
+            и отправьте форму или просто позвоните нам.
+          </div>
+         
+          <form class="container" action="" id="form">
+            <div class="left">
+              <input type="text" placeholder="Имя." class="input"  name="name" />
+              <input type="text" placeholder="Тел." class="input"  name="phone"/>
+              <input type="submit" class="btn" />
+            </div>
 
-    <div class="right">
-        <input type="text" placeholder="Почта.">
-        <textarea
-        name="message"
-        id="comment"
-        cols="30"
-        rows="4"
-        placeholder="Коментарий."
-    ></textarea>
-
-    </div>
-</div>
+            <div class="right">
+              <input type="text" placeholder="Почта." class="input"  name="mail" />
+              <textarea
+                name="message"
+                id="comment"
+                cols="30"
+                rows="4"
+                placeholder="Коментарий."
+              ></textarea>
+            </div>
+          </form>
         </div>
       </div>
     </div>
 
     <div class="cards_block">
       <div class="block">
-        <div class="card"></div>
+        <div class="card" data-size="до 4 дек" data-mass="230 кг." data-impact="до 3-х тонн/час" data-moshnost="0,75 кВт" >
+          <div
+            class="photo"
+            style="background-image: url(/assets/products/sushka_rassev/ВМА-01.png)"
+          >
+            <div class="name">ВМА-01</div>
+          </div>
 
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
+          <div class="desc" >
+            <p>Высокая эффективность рассева.
+              Возможность подбора оптимальных режимов для различных материалов.</p>
+          </div>
+        </div>
+        
       </div>
     </div>
   </body>
