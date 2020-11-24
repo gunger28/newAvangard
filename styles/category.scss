@@ -278,12 +278,12 @@ header {
   margin-top: 10px;
   background-color: rgb(255, 255, 255);
   width: 100%;
-  max-height: 530px;
+  height: 530px;
   text-align: center;
   display: flex;
 
   .block {
-    margin: auto auto;
+    margin: 20px auto;
     //   background-color: rgb(158, 52, 52);
     width: 60%;
     max-height: 95%;
@@ -291,9 +291,9 @@ header {
     display: flex;
 
     .cat {
-      margin: auto auto;
-      // background-color: rgb(52, 137, 158);
-      width: 49%;
+      margin: 0 auto;
+    //   background-color: rgb(52, 137, 158);
+      width: 55%;
       max-height: 95%;
 
       display: flex;
@@ -301,7 +301,7 @@ header {
       .photo {
         //margin: auto auto;
      // background-color: rgb(221, 221, 221);
-        width: 49%;
+        width: 40%;
         max-height: 100%;
         background-size: contain;
         display: flex;
@@ -309,9 +309,9 @@ header {
       }
 
       .info {
-        margin: auto auto;
-        //  background-color: rgb(42, 96, 212);
-        width: 49%;
+        margin: 0 auto;
+         // background-color: rgb(42, 96, 212);
+        width: 60%;
         max-height: 100%;
 
         display: inline-block;
@@ -361,9 +361,10 @@ header {
           .text {
               word-wrap: break-word;
             //  text-indent: 25px;
+            text-shadow: 1px 1px 1px rgb(201, 201, 201);
             width: 85%;
             text-align: left;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 300;
             font-family: "Roboto", serif;
           }
@@ -376,7 +377,7 @@ header {
               margin-bottom: 5px;
               width: 100%;
               height: 30px;
-              background-color: rgb(223, 93, 93);
+              background-color: #df5d5d;
 
               border-radius: 5px;
               display: flex;
@@ -386,7 +387,7 @@ header {
               cursor: pointer;
 
               &:hover {
-                background-color: rgb(209, 45, 45);
+                background-color: #d12d2d;
               }
 
               p {
@@ -412,14 +413,14 @@ header {
       background-color: rgb(134, 0, 0);
       width: 4px;
       margin: auto auto;
-      height: 250px;
+      height: 400px;
      max-height: 400px;
      
     }
 
     .order {
-      margin: auto auto;
-      //background-color: rgb(31, 134, 0);
+      margin: 0 auto;
+    //  background-color: rgb(31, 134, 0);
       width: 40%;
       height: 95%;
 
@@ -531,7 +532,8 @@ header {
   margin-top: 10px;
   //background-color: rgb(255, 255, 255);
   width: 100%;
-  max-height: 450px;
+  min-height: 400px;
+  max-height: 650px;
   text-align: center;
   display: flex;
 

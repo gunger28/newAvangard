@@ -4,9 +4,57 @@ window.onload = function () {
   redirect();
   sendForm();
 setStart();
-
+info_btns();
 
 };
+
+var haract_text;
+var dop_text;
+var osob_text;
+
+function info_btns(){
+
+  haract = document.getElementById('haract');
+  dop = document.getElementById('dop');
+  osob = document.getElementById('osob');
+
+  desc = document.getElementById("desc");
+
+  haract.addEventListener("click", function (event) {
+
+    console.log(haract_text);
+     desc.textContent = haract_text;
+
+     haract.style.backgroundColor = "#d12d2d" ;
+    dop.style.backgroundColor = "#df5d5d" ;
+    osob.style.backgroundColor = "#df5d5d" ;
+   
+  });
+
+  dop.addEventListener("click", function (event) {
+
+    console.log(dop_text);
+     desc.textContent = dop_text;
+
+      haract.style.backgroundColor = "#df5d5d" ;
+    dop.style.backgroundColor = "#d12d2d" ;
+    osob.style.backgroundColor = "#df5d5d" ;
+  
+   
+  });
+
+  osob.addEventListener("click", function (event) {
+
+    console.log(osob_text);
+     desc.textContent = osob_text;
+  
+   haract.style.backgroundColor = "#df5d5d" ;
+   dop.style.backgroundColor = "#df5d5d" ;
+   osob.style.backgroundColor = "#d12d2d" ;
+  });
+
+
+}
 
 function anims() {
 
@@ -49,6 +97,11 @@ function redirect() {
         desc = document.getElementById("desc");
         photo = document.getElementById("photo");
 
+        haract_text = card.childNodes[3].textContent;
+        dop_text = card.dataset.dop;
+        osob_text = card.dataset.osob;
+       
+
         title.textContent = card.childNodes[1].textContent;
        size.textContent = card.dataset.size;
        mass.textContent = card.dataset.mass;
@@ -79,6 +132,9 @@ if (products[0] != null) {
     card = products[0];
 
  
+    haract_text = card.childNodes[3].textContent;
+    dop_text = card.dataset.dop;
+    osob_text = card.dataset.osob;
 
       title.textContent = card.childNodes[1].textContent;
      size.textContent = card.dataset.size;
