@@ -227,8 +227,8 @@ header .menu-info .menu .element a:hover {
   display: -ms-flexbox;
   display: flex;
   cursor: pointer;
-  -webkit-transition-duration: .4s;
-          transition-duration: .4s;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 
 .billboard .textUs .block .btn a {
@@ -277,7 +277,7 @@ header .menu-info .menu .element a:hover {
   margin-top: 10px;
   background-color: white;
   width: 100%;
-  height: 330px;
+  max-height: 530px;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -287,7 +287,7 @@ header .menu-info .menu .element a:hover {
 .viewer .block {
   margin: auto auto;
   width: 60%;
-  height: 95%;
+  max-height: 95%;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -297,16 +297,15 @@ header .menu-info .menu .element a:hover {
 .viewer .block .cat {
   margin: auto auto;
   width: 49%;
-  height: 95%;
+  max-height: 95%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .viewer .block .cat .photo {
-  margin: auto auto;
   width: 49%;
-  height: 100%;
+  max-height: 100%;
   background-size: contain;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -317,7 +316,7 @@ header .menu-info .menu .element a:hover {
 .viewer .block .cat .info {
   margin: auto auto;
   width: 49%;
-  height: 100%;
+  max-height: 100%;
   display: inline-block;
 }
 
@@ -355,7 +354,6 @@ header .menu-info .menu .element a:hover {
 
 .viewer .block .cat .info .desc_block {
   margin: 0px;
-  background-color: #d1ce0f;
   width: 100%;
   max-height: 100%;
   display: -webkit-box;
@@ -364,30 +362,58 @@ header .menu-info .menu .element a:hover {
 }
 
 .viewer .block .cat .info .desc_block .text {
-  text-align: center;
+  word-wrap: break-word;
+  width: 85%;
+  text-align: left;
   font-size: 18px;
   font-weight: 300;
   font-family: "Roboto", serif;
 }
 
 .viewer .block .cat .info .desc_block .choser {
-  width: 20%;
-  height: 100%;
-  background-color: #0f73d1;
+  width: 33px;
+  height: 100px;
 }
 
 .viewer .block .cat .info .desc_block .choser .circle {
+  margin-bottom: 5px;
   width: 100%;
-  height: 33%;
-  background-color: #d12d2d;
+  height: 30px;
+  background-color: #df5d5d;
   border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.viewer .block .cat .info .desc_block .choser .circle:hover {
+  background-color: #d12d2d;
+}
+
+.viewer .block .cat .info .desc_block .choser .circle p {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: white;
+  margin: auto auto;
+  width: 100%;
+  font-family: "Roboto", serif;
+  text-transform: uppercase;
+  line-height: 20px;
+  height: 20px;
+  font-size: 20px;
 }
 
 .viewer .block .line {
   background-color: #860000;
   width: 4px;
-  height: 80%;
   margin: auto auto;
+  height: 250px;
+  max-height: 400px;
 }
 
 .viewer .block .order {
@@ -453,8 +479,8 @@ header .menu-info .menu .element a:hover {
   font-size: 18px;
   font-weight: 300;
   font-family: "Roboto", serif;
-  -webkit-transition-duration: .4s;
-          transition-duration: .4s;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 
 .viewer .block .order .container .left .btn:hover {
@@ -529,8 +555,8 @@ header .menu-info .menu .element a:hover {
   opacity: 0;
   -webkit-transform: scale(0.5, 0.5);
           transform: scale(0.5, 0.5);
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .cards_block .block .card .photo {
