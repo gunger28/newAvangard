@@ -82,7 +82,7 @@ function redirect(){
 var name = card.childNodes[3].childNodes[1].textContent;
 
 console.log(name);
-console.log("сушка/рассев");
+//console.log("сушка/рассев");
 
 
 //send("name");
@@ -108,14 +108,32 @@ if(name === "пивное оборудование"){
     window.open('/pages/products/pishevoe/pivnoe.html','_self',false);
 }
 
-if(name === "станции затаривания"){
-    window.open('/pages/products/pishevoe/zatar.html','_self',false);
-}
 
 
 //---------------TEXNOLOG-------------------
+if(name === "вибросито"){
+    window.open('/pages/products/texnolog/vibro.html','_self',false);
+}
 
+if(name === "деревообработка"){
+    window.open('/pages/products/texnolog/derevo.html','_self',false);
+}
 
+if(name === "станции затаривания"){
+    window.open('/pages/products/texnolog/zatar.html','_self',false);
+}
+
+if(name === "транспортирующее оборудование"){
+    window.open('/pages/products/texnolog/trans.html','_self',false);
+}
+
+if(name === "реактор"){
+    window.open('/pages/products/texnolog/reakt.html','_self',false);
+}
+
+if(name === "ёмкости"){
+    window.open('/pages/products/pishevoe/emkost.html','_self',false);
+}
 
 
 

@@ -437,6 +437,13 @@ header .menu-info .menu .element a:hover {
   height: 250px;
   background-size: contain;
   background-repeat: no-repeat;
+  -webkit-transition-duration: .4s;
+          transition-duration: .4s;
+}
+
+.product_card_line .card .photo:hover {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
 }
 
 .product_card_line .card .name {

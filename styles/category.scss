@@ -303,9 +303,13 @@ header {
      // background-color: rgb(221, 221, 221);
         width: 40%;
         max-height: 100%;
-        background-size: contain;
+       background-size: contain;
+        background-size: 100%;
         display: flex;
+        
         background-repeat: no-repeat;
+        margin-right: 10px;
+        transition-duration: .4s;
       }
 
       .info {
@@ -330,6 +334,8 @@ header {
           font-family: "Roboto", serif;
           text-transform: uppercase;
           font-size: 30px;
+
+          transition-duration: .4s;
         }
 
         .props {
@@ -343,6 +349,7 @@ header {
           }
 
           .text {
+            transition-duration: .4s;
             font-family: "Roboto", serif;
             font-weight: 300;
             margin-left: 8px;
@@ -367,6 +374,7 @@ header {
             font-size: 16px;
             font-weight: 300;
             font-family: "Roboto", serif;
+            transition-duration: .4s;
           }
 
           .choser {
@@ -382,6 +390,10 @@ header {
               border-radius: 5px;
               display: flex;
 
+              background-position: center;
+              background-size: 80%;
+              background-repeat: no-repeat;
+
               transition-duration: 0.4s;
 
               cursor: pointer;
@@ -396,6 +408,7 @@ header {
                 color: white;
                 margin: auto auto;
                 // border-bottom: 3px solid rgb(48, 48, 48);
+                
                 width: 100%;
                 font-family: "Roboto", serif;
                 text-transform: uppercase;
@@ -562,12 +575,13 @@ header {
 
       .photo {
         border-radius: 20px;
-        background-size: contain;
+       // background-size: contain;
+        background-size: 100%;
         background-repeat: no-repeat;
         background-color: rgb(255, 255, 255);
         width: 100%;
         height: 250px;
-
+        background-position: center;
         display: inline-block;
 
         .name {
