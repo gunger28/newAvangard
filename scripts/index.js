@@ -3,6 +3,7 @@
 window.onload = function(){
 anims();
 sendForm();
+redirect();
 
     let cat_prom = document.getElementById('prom'); 
     let cat_pishevoe = document.getElementById('pishevoe');
@@ -133,3 +134,41 @@ best_products.forEach(element => {
 
    
     });
+
+    function redirect(){
+        products = document.querySelectorAll(".card");
+    
+        products.forEach(card => {
+            
+         card.addEventListener('click', function(event) {
+    
+    var name = card.childNodes[3].childNodes[1].textContent;
+    
+    console.log(name);
+    //console.log("сушка/рассев");
+    
+    
+    //send("name");
+    
+    if(name === "реактор"){
+        console.log(name);
+        window.open('/pages/products/texnolog/reakt.html','_self',false);
+    }
+    
+    if(name === "вибросита"){
+        window.open('/pages/products/texnolog/vibro.html','_self',false);
+    }
+    
+    if(name === "пилорама"){
+        window.open('/pages/products/texnolog/derevo.html','_self',false);
+    }
+    
+    if(name === "ёмкости"){
+        window.open('/pages/products/pishevoe/emkost.html','_self',false);
+    }
+    
+    
+
+            });
+        });
+    }
