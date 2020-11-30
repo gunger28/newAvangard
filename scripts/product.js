@@ -3,7 +3,7 @@ window.onload = function () {
   haract = document.getElementById("haract");
   dop = document.getElementById("dop");
   osob = document.getElementById("osob");
-
+  haract.style.backgroundColor = "#d12d2d";
   haract.style.backgroundImage = "url(/assets/ico/tech2.png)";
   dop.style.backgroundImage = "url(/assets/ico/tech1.png)";
   osob.style.backgroundImage = "url(/assets/ico/tech3.png)";
@@ -236,9 +236,9 @@ type = "2";
 console.log(document.getElementById("photo").style.backgroundImage.replace(/(url\(|\)|")/g, ''));
 //alert(document.querySelectorAll('.input')[0]);
       event.preventDefault();
-
-      site = "http://newmayak" + document.getElementById("photo").style.backgroundImage.replace(/(url\(|\)|")/g, '') ;
-
+     
+     //site = "http://newmayak" + document.getElementById("photo").style.backgroundImage.replace(/(url\(|\)|")/g, '') ;
+      site = " http://mayak-avangard.ru" + document.getElementById("photo").style.backgroundImage.replace(/(url\(|\)|")/g, '') ;
       const formData = new FormData();
       formData.append('type', type.toString());
 formData.append('category', category.toString());

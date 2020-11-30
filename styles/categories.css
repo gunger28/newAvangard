@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   scroll-behavior: smooth;
 }
@@ -61,7 +60,7 @@ header .menu-info .info .block .ico_mail {
   margin-top: 10px;
   height: 80%;
   width: 60px;
-  background-image: url("../assets/ico/Ресурс 2.png");
+  background-image: url("../assets/ico/mail.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -70,7 +69,7 @@ header .menu-info .info .block .ico_phone {
   margin-top: 10px;
   height: 70%;
   width: 50px;
-  background-image: url("../assets/ico/Ресурс 1.png");
+  background-image: url("../assets/ico/phone.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -411,6 +410,7 @@ header .menu-info .menu .element a:hover {
 .product_card_line {
   margin: 30px auto;
   width: 70%;
+  height: 450px;
   max-height: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -419,7 +419,7 @@ header .menu-info .menu .element a:hover {
 
 .product_card_line .card {
   margin: auto 2.5%;
-  background-color: #eeeeee;
+  background-color: #ffffff;
   width: 20%;
   height: 100%;
   -webkit-box-shadow: 4px 4px 18px 0px rgba(0, 0, 0, 0.25);
@@ -452,6 +452,10 @@ header .menu-info .menu .element a:hover {
   height: 50px;
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

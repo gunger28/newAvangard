@@ -3,7 +3,7 @@
 window.onload = function(){
 anims();
 sendForm();
-redirect();
+go_to();
 
     let cat_prom = document.getElementById('prom'); 
     let cat_pishevoe = document.getElementById('pishevoe');
@@ -22,6 +22,7 @@ redirect();
 
     }
 
+    document.getElementsByTagName("body")[0].style.overflow = "scroll";
 
 
 };
@@ -135,7 +136,7 @@ best_products.forEach(element => {
    
     });
 
-    function redirect(){
+    function go_to(){
         products = document.querySelectorAll(".card");
     
         products.forEach(card => {
