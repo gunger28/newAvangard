@@ -21,6 +21,7 @@ window.onload = function () {
   setStart();
   info_btns();
   sendForm_test();
+  change_cont();
 };
 
 var haract_text;
@@ -222,6 +223,13 @@ function setStart() {
 //   });
 
 // };
+
+function change_cont(){
+
+  phone = document.querySelectorAll(".desc")[1];
+phone.textContent = "8 913 007 61 93"
+ // console.log(phone);
+}
 
 function sendForm_test() {
   // img = document.getElementById("photo");

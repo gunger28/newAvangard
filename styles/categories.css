@@ -436,6 +436,7 @@ header .menu-info .menu .element a:hover {
   width: 100%;
   height: 250px;
   background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
   -webkit-transition-duration: .4s;
           transition-duration: .4s;

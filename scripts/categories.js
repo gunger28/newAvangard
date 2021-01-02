@@ -4,7 +4,7 @@ window.onload = function(){
 anims();
 animate();
 redirect();
-
+change_cont();
 
 
     
@@ -135,6 +135,14 @@ if(name === "ёмкости"){
     window.open('/pages/products/pishevoe/emkost.html','_self',false);
 }
 
+if(name === "сушка"){
+    window.open('/pages/products/texnolog/sushka_tex.html','_self',false);
+}
+
+if(name === "диссольверы"){
+    window.open('/pages/products/texnolog/dissolvers.html','_self',false);
+}
+
 
 
 
@@ -142,6 +150,13 @@ if(name === "ёмкости"){
         });
     });
 }
+
+function change_cont(){
+
+    phone = document.querySelectorAll(".desc")[1];
+  phone.textContent = "8 913 007 61 93"
+   // console.log(phone);
+  }
 
  async function send(name_page) {
     

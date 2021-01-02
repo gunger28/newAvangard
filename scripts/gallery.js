@@ -1,11 +1,18 @@
 window.onload = function (){
 
 picker();
-
+change_cont();
 
 
 
 }
+
+function change_cont(){
+
+    phone = document.querySelectorAll(".desc")[1];
+  phone.textContent = "8 913 007 61 93"
+   // console.log(phone);
+  }
 
 function picker(){
 
