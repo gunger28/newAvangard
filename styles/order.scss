@@ -34,17 +34,17 @@ header {
     display: inline-block;
     height: 100%;
     width: calc(100% - 110px);
-    background-color: rgb(85, 85, 85);
+    //background-color: rgb(85, 85, 85);
 
     .info {
       display: flex;
       height: 60%;
       width: 100%;
       background-color: $main_color;
-
+      border-bottom-left-radius: 15px;
       .block {
         display: flex;
-        margin-left: 5px;
+        margin-left: 30px;
         height: 100%;
         width: 220px;
         //  background-color: rgb(117, 117, 117);
