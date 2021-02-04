@@ -269,10 +269,10 @@ formData.append('img', site );
 
       if (+status === 1) {
         alert("Заявка успешно отправлена!");
-        document
+       // document
          // .querySelectorAll(".input")
         //  .forEach((input) => (input.value = ""));
        // document.querySelector("textarea").value = "";
-      } else alert("Произошла ошибка, пожалуйста попробуйте позже");
+      } else alert("Заполните все обязательные поля формы!");
     });
 }
