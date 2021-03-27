@@ -1,0 +1,93 @@
+body {
+  background-image: url("/assets/back.png");
+}
+
+.menu {
+  width: 100%;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+form {
+  width: 100%;
+  margin: auto auto;
+  height: 35px;
+}
+
+form input {
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  cursor: pointer;
+  min-width: 100px;
+  max-width: 200px;
+  height: 100%;
+  padding: 2px;
+  color: #353535;
+}
+
+form input:focus {
+  outline: none;
+}
+
+form input:hover {
+  background-color: #ffb6b6;
+}
+
+form .textLabel {
+  color: black;
+  font-size: 20px;
+  background-color: #e4e4e4;
+  border: none;
+  cursor: text;
+  width: 200px;
+  height: 90%;
+  border-radius: 5px;
+}
+
+.graphs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  margin: 0;
+  height: 500px;
+}
+
+.graphs .graphic {
+  width: 33%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  background-color: #eeeeee;
+}
+
+.row_val {
+  margin-left: 10px;
+  width: 200px;
+  font-family: "Roboto";
+  height: 100%;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-bottom: 7px;
+  background-color: #c5c5c5;
+}
+
+.legend {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 7px;
+  background-color: #ff5f5f;
+}
+/*# sourceMappingURL=admin.css.map */

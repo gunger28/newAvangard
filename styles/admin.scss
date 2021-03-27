@@ -1,0 +1,99 @@
+$main_color: #8d0002;
+$roboto: "Roboto";
+body{
+background-image: url("/assets/back.png");
+//background-size: cover;
+//background-color: rgb(31, 201, 201);
+}
+
+.menu {
+  width: 100%;
+  height: 60px;
+  display: flex;
+}
+
+form {
+  width: 100%;
+  margin: auto auto;
+  //background-color: rgb(108, 255, 95);
+  height: 35px;
+  input {
+
+    font-size: 20px;
+   // background-color: rgb(219, 89, 89);
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    cursor: pointer;
+    min-width: 100px;
+    max-width: 200px;
+    height: 100%;
+    padding: 2px;
+    color: rgb(53, 53, 53);
+  
+  &:focus{
+   outline: none;
+  }
+
+  &:hover{
+    background-color: rgb(255, 182, 182);
+
+  }
+  }
+
+  
+
+  .textLabel {
+    color: black;
+    font-size: 20px;
+   background-color: rgb(228, 228, 228);
+    border: none;
+    cursor: text;
+    width: 200px;
+    height: 90%;
+    border-radius: 5px;
+  }
+}
+
+.graphs{
+display: flex;
+background-color: rgb(255, 255, 255);
+margin: 0;
+height: 500px;
+.graphic{
+  width: 33%;
+  display: flex;
+  height: 100%;
+ // margin: auto auto;
+  background-color: rgb(238, 238, 238);
+}
+}
+
+.row_val{
+ // border-right: 1px solid black;
+  margin-left: 10px; 
+  width: 200px;
+font-family: $roboto;
+height: 100%;
+}
+
+.row{
+  display: flex; 
+  width: 100%; 
+  margin-bottom:7px; 
+  background-color: rgb(197, 197, 197);
+  
+
+}
+
+.legend{
+  display: flex; 
+  width: 100%; 
+  margin: 0;
+  margin-bottom:7px; 
+  background-color: rgb(255, 95, 95);
+  
+
+}
+
+
+

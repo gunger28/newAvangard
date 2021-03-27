@@ -1,258 +1,250 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        
 
+<head>
+    <meta charset="utf-8">
+    <!-- Roboto -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/styles/admin.css" />
+</head>
 
+<body>
+    <div class="menu">
+        <form method="POST">
+            <input class="textLabel" type="text" name="option" placeholder="Номер телефона">
+            <input type="submit" name="getUsers" value="Пользователи">
+            <input type="submit" name="getOrders" value="Заказы">
+            <input id="getStat" type="submit" name="getStatistics" value="Статистика">
+        </form>
+    </div>
+    <?php
 
-        <!-- Roboto -->
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
-            rel="stylesheet"
-        />
+    $con =  mysqli_connect("localhost", "a316809_1", "mayakavangard", "a316809_1");
+    $statistics_BTN = isset($_POST['getStatistics']);
+    $Orders_BTN = isset($_POST['getOrders']);
+    $Users_BTN = isset($_POST['getUsers']);
 
-        <style>
-.menu{
+    if ($statistics_BTN) {
+        getStatistics($con);
+    }
 
-    width:400px;
-    height:60px;
-    display: flex;
+    if ($Orders_BTN) {
+        getOrders($con);
+    }
 
+    if ($Users_BTN) {
+        getUsers($con);
+    }
 
-}
+    function getOrders($con)
+    {
 
-form{
-
-    margin: auto auto;
-
-}
-
-input{
-
-    font-size: 20px;
-    background-color: rgb(255, 95, 95);
-background-color: rgb(219, 89, 89);
-border: none;
-cursor: pointer;
-width: 100%;
-height: 100%;
-}
-
-        </style>
-    </head>
-    <body>
-        
-<div class="menu">
-
-<form method="POST">
-<input type="submit" name="btn" value="Пользователи">
-</form>
-
-<form method="POST">
-<input type="submit" name="btn" value="Заказы">
-</form>
-
-<form method="POST">
-<input type="submit" name="btn" value="Статистика">
-</form>
-
-</div>
-
-
-
-
-       
-<?php
-
-$con =  mysqli_connect("localhost","root","","users");
-
-if($_POST['btn'] == "Заказы"){
-
-    $query_prod = 'SELECT 
-              
-    name, 
-    mail, 
-   number,
-   product,
-   item
-  FROM 
-    users INNER JOIN orders 
-    ON users.id = orders.user 
-    ';
-
-
-
-$query = 'SELECT 
-id,
-name, 
-mail, 
-number
+        $option = $_POST['option'];
+        $query = 'SELECT name,mail,number,product,item,message,date,region
 FROM 
-users';
+users INNER JOIN orders ON users.id = orders.user_id';
+        $option_string = "WHERE number = '$option'";
 
-$result = mysqli_query($con, $query_prod);
-$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-$num = 0;
+        if ($option == '') {
+            $result = mysqli_query($con, $query);
+            $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        } else {
+            $query = "$query $option_string";
+            $result = mysqli_query($con, $query);
+            $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        }
 
+        $ordersCol_names = array(
+            "ИМЯ", "НОМЕР", "ПОЧТА", "КАТЕГОРИЯ", "ТОВАР", "Сообщение", "РЕГИОН", "Дата"
+        );
+        drawTable_Orders($ordersCol_names, $rows);
+    }
+
+    function getUsers($con)
+    {
+
+        $option = $_POST['option'];
+
+
+        $query = 'SELECT id, name, mail, number,region
+FROM users';
+        $option_string = "WHERE number ='$option'";
+
+        if ($option == "") {
+            $result = mysqli_query($con, $query);
+            $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        } else {
+            $query = "$query $option_string";
+            $result = mysqli_query($con, $query);
+            $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        }
+
+        $userCol_names = array(
+            "№", "ИМЯ", "ПОЧТА", "ТЕЛЕФОН", "РЕГИОН"
+        );
+        drawTable_Users($userCol_names, $rows);
+    }
+
+    function drawTable_Users($col_names, $rows)
+    {
+
+        echo "<div class=\"legend\">";
+        foreach ($col_names as $name) {
+            drawCol_name($name);
+        }
+        echo "</div>";
+
+        foreach ($rows as $row) {
+            drawRow($row);
+        };
+    }
+
+    function drawTable_Orders($col_names, $rows)
+    {
+
+        echo "<div class=\"legend\">";
+        foreach ($col_names as $col_name) {
+            drawCol_name($col_name);
+        }
+        echo "</div>";
+
+        foreach ($rows as $row) {
+            drawRow($row);
+        };
+    }
+
+ 
+    function drawTable_Visiters($col_names, $rows)
+    {
+        echo "<div class=\"legend\">";
+
+        foreach ($col_names as $col) {
+            drawCol_name($col);
+        };
+        echo "</div>";
+
+        foreach ($rows as $row) {
+            drawRow($row);
+        };
+    }
+
+    function drawRow_Statistics($row_name, $option)
+    {
+        echo  "<div class=\"row\">";
+        echo  drawRow_var($row_name) . "
+         " . drawRow_var($option) . "
+          </div>";
+    }
+
+    function drawCol_name($name)
+    {
+        echo  "<p class=\"row_val\">
+        " . $name . ":
+        </p>";
+    }
+
+    function drawRow($rows)
+    {
+
+        echo  "<div class=\"row\" >";
+        foreach ($rows as $row) {
+            echo  drawRow_var($row);
+        };
+        echo  "
+                 </div>";
+    }
+
+    function drawRow_var($row)
+    {
+        echo  "<p class=\"row_val\">
+         " . $row . "
+         </p>";
+    }
+
+    function drawDiv_statistics(){
 echo "
-<div style=\" display: flex; width: 100%; margin:7px; background-color: rgb(255, 95, 95); position:relative;\" >
---
-
-<p style=\" margin-left: 10px; max-width: 50px;\">
-№
-</p>
-
-<p style=\" margin-left: 10px; width: 170px;\">
-ИМЯ:
-</p>
-
-<p style=\" margin-left: 10px; width: 170px;\">
-ПОЧТА:
-</p>
-
-<p style=\" margin-left: 10px; width: 100px;\">
-ТЕЛЕФОН:
-</p>
-
-<p style=\" margin-left: 10px; width: 140px;\">
-КАТЕГОРИЯ:
-</p>
-
-<p style=\" margin-left: 10px; width: 120px;\">
-ТОВАР:
-</p>
-
-</div>
-
-";
-
-foreach ($rows as $row) {
-   $num += 1;
-echo 
-"
-<div style=\"display: flex; width: 100%; margin:7px; background-color: rgb(200, 200, 200);\" >
---
-
-<p style=\" margin-left: 10px; max-width: 50px; background-color: rgb(255, 255, 255);\">"
-. $num . "
-
-<p style=\" margin-left: 10px; width: 170px;\">"
-. $row['name'] . "
-
-</p>
-
-<p style=\" margin-left: 10px; width: 170px;\">"
-. $row['mail'] . "
-
-</p>
-
-<p style=\" margin-left: 10px; width: 100px;\">"
-. $row['number'] . "
-
-</p>
-
-<p style=\" margin-left: 10px; width: 140px;\">"
-. $row['product'] . "
-
-</p>
-
-<p style=\" margin-left: 10px; width: 120px;\">"
-. $row['item'] . "
-
-</p>
-</div>
-";
-}
-}
-if($_POST['btn'] == "Пользователи"){
-
-
-
-
-
-$query = 'SELECT 
-id,
-name, 
-mail, 
-number
-FROM 
-users';
-
-$result = mysqli_query($con, $query);
-$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-
-
-echo "
-<div style=\" display: flex; width: 100%; margin:7px; background-color: rgb(255, 95, 95); \" >
---
-
-<p style=\" margin-left: 10px; width: 170px;\">
-ИМЯ:
-</p>
-
-<p style=\" margin-left: 10px; width: 170px;\">
-ПОЧТА:
-</p>
-
-<p style=\" margin-left: 10px; width: 100px;\">
-ТЕЛЕФОН:
-</p>
-
-</div>
-
-";
-
-
-foreach ($rows as $row) {
-echo 
-"
-<div style=\"display: flex; width: 100%; margin:7px; background-color: rgb(200, 200, 200);\" >
---
-
-<p style=\" margin-left: 10px; width: 170px;\">"
-. $row['name'] . "
-
-</p>
-
-<p style=\" margin-left: 10px; width: 170px;\">"
-. $row['mail'] . "
-
-</p>
-
-<p style=\" margin-left: 10px; width: 100px;\">"
-. $row['number'] . "
-
-</p>
-</div>
-";
-
-}
-
-
-$phone = '89546754890';
-
-
-$get_id = mysqli_query($con , "select id from users where number = '$phone'");
-
-
-echo $_POST['btn'];
-    echo "result: " ;
+<div id=\"graphs\" class=\"graphs\">
+<div id=\"conversion\" class=\"graphic\">
     
-  
-
-    while ($row = $get_id->fetch_assoc()) {
+    </div>
+    <div id=\"systems\" class=\"graphic\">
     
+</div>
+<div id=\"amount_users\" class=\"graphic\">
+    
+</div>
+</div>
+";
+
+    }
+
+    function getStatistics($con)
+    {
+drawDiv_statistics();
+
+        $query = "select name,location,browser,system,date,amount from visiters";
+
+        $getSUsers = mysqli_query($con, "select COUNT(*) as couter from visiters");
+        $getSOrders = mysqli_query($con, "select COUNT(*) as couter from orders");
+        $getVisits = mysqli_query($con, "select sum(amount) as amount from visiters");
+
+        $getPcs = mysqli_query($con, "select COUNT(*) as amount from visiters where system = 'Windows' or system = 'Macintosh;'");
+        $getPhones = mysqli_query($con, "select COUNT(*) as amount from visiters where system = 'iPhone;' or system = 'Linux;'");
+
+        $Users_amount = mysqli_fetch_array($getSUsers)['couter'];
+        $Orders_amount = mysqli_fetch_array($getSOrders)['couter'];
+        $Visisters_amount = mysqli_fetch_array($getVisits)['amount'];
+
+        $pc_amount = mysqli_fetch_array($getPcs)['amount'];
+        $phone_amount = mysqli_fetch_array($getPhones)['amount'];
+        $unknown_sys = $Users_amount - $pc_amount - $phone_amount;
+
+        $conversion = round($Orders_amount / $Users_amount*100,1);
+        $visiters = mysqli_query($con, $query);
+        $statistics = array(
+            "Посещений" => $Visisters_amount,
+            "Пользователи" => $Users_amount,
+            "Заказы" => $Orders_amount,
+            "Конверсия" => "$conversion %",
+            "Компьютеры" => $pc_amount,
+            "Телефоны" => $phone_amount,
+            "Неопределённые" => $unknown_sys
+        );
+
+        $graph_data = array(
+            "Посетители" => $Users_amount,
+            "Заказы" => $Orders_amount,
+            "Компьютеры" => $pc_amount,
+            "Телефоны" => $phone_amount,
+            "Неопределённые" => $unknown_sys
+        );
+
+        foreach ($statistics as $statistic => $value) {
+
+            drawRow_Statistics($statistic, $value);
+        };
+
+        $visitersCol_names = array(
+            "ИМЯ", "РЕГИОН", "Браузер", "Система ", "ДАТА ", "Посещений "
+        );
+        drawTable_Visiters($visitersCol_names, $visiters);
+        drawGrap_dataSet($graph_data);
     }
 
 
- 
-}
-?>
 
+    function drawGrap_dataSet($data)
+    {
+        foreach ($data as $dat => $val) {
+            echo "<p class=\"conv\">" . $dat . "</p>";
+            echo "<p class=\"conv\">" . $val . "</p>";
+        };
+    }
 
-    </body>
+    ?>
+    <script src="https://www.google.com/jsapi"></script>
+    <script src="/scripts/graphics.js"> </script>
+</body>
 
 </html>

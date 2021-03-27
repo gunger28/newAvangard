@@ -1,0 +1,153 @@
+body{
+background-color: #ffffff;
+background-size: 100%;
+background-repeat: no-repeat;
+display: flex;
+margin: 0;
+}
+
+form{
+width: 300px;
+margin: auto auto;
+    display: inline-block;
+}
+
+
+div{
+text-align: left;
+text-transform: uppercase;
+color: rgb(97, 97, 97);
+}
+
+.main{
+    width: 100%;
+    display: inline-block;
+    background-color: #ecb8ce;
+    }
+    
+    header{
+        margin: 0;
+        width: 100%;
+        height: 500px;
+        background-color: rgb(255, 255, 255);
+        display: grid;
+    }
+    
+    .logo{
+    margin: auto auto;
+        width: 200px;
+        height: 200px;
+        /* background-color: rgb(135, 155, 222); */
+    }
+    
+    .info{
+    display: grid;
+        margin: auto auto;
+        width: 60%;
+        height: 90%;
+        /* background-color: rgb(135, 155, 222); */
+    
+    }
+
+    
+
+.onliner{
+width: 20px;
+height: 20px;
+border-radius: 10px;
+    background-color: rgb(42, 182, 0);
+margin-right: 10px;
+}
+
+.nick{
+    font-size: 25px;
+    text-transform: uppercase;
+    color: rgb(43, 156, 90);
+margin: auto auto;
+
+}
+
+
+textarea{
+width: 200px;
+height: 200px;
+
+}
+
+input{
+    border-radius: 10px;
+    width: 80%;
+font-size: 20px;
+background-color: rgb(236, 236, 236);
+}
+
+.getter_comm{
+    width: 100%;
+display: inline-block;
+
+}
+
+
+.text{
+    color: rgb(85, 85, 85);
+font-size: 20;
+    margin: auto auto;
+}
+
+.comments_block{
+    /* background-color: rgb(100, 26, 26); */
+margin: auto auto;
+    width: 80%;
+    height: 200px;
+    display: grid;
+    box-decoration-break: clone;
+    
+}
+
+.commentArea{
+margin: auto auto;
+    width: 100%;
+    height: 70%;  
+border-radius: 15px;
+background-color: rgb(236, 236, 236);
+font-size: 26px ;
+outline: none;
+}
+
+.sendComment{
+    margin: auto auto;
+    width: 10%;
+    height: 30px;  
+}
+
+.commentSetter{
+    margin: auto auto;
+    display: flex; 
+    width: 80%; 
+    height: 60px; 
+    color:black;
+    margin-top: 5px;  
+    background-color:white;
+    font-size: 20px;
+border-radius: 15px;
+}
+
+.name{
+    display: flex; 
+    width: 10%; 
+    /* height: 100%;  */
+    color:black;
+    background-color:rgb(228, 228, 228);
+display: grid;
+}
+
+.nameP{
+
+    margin: auto auto;
+}
+
+.commentText{
+    padding-left: 7px;
+    color: rgb(63, 63, 63);
+height: 100%;
+}

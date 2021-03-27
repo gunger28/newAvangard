@@ -252,22 +252,6 @@ header .menu-info .menu .element a:hover {
           transform: scale(0.95, 0.95);
 }
 
-.order_line {
-  width: 100%;
-  background-color: white;
-  height: 200px;
-  display: -ms-grid;
-  display: grid;
-}
-
-.order_line p {
-  margin: auto auto;
-  color: black;
-  font-family: "Roboto", serif;
-  line-height: 22px;
-  font-size: 22px;
-}
-
 .title {
   margin-top: 10px;
   width: 100%;
@@ -288,75 +272,62 @@ header .menu-info .menu .element a:hover {
   font-size: 30px;
 }
 
-.viewer {
-  margin-top: 10px;
-  background-color: white;
-  width: 100%;
-  height: 530px;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.viewer .block {
-  margin: 20px auto;
-  width: 60%;
-  max-height: 95%;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.viewer .block .line {
-  background-color: #860000;
-  width: 4px;
+.order_line {
+  width: 45%;
+  height: 600px;
   margin: auto auto;
-  height: 400px;
-  max-height: 400px;
-}
-
-.viewer .block .order {
-  margin: 0 auto;
-  width: 40%;
-  height: 95%;
-}
-
-.viewer .block .order .title {
-  margin: 0px;
-  background-color: #d42a2a;
-  width: 90%;
-  height: 36px;
-  font-weight: 300;
-  text-indent: 8px;
-  color: white;
-  font-family: "Roboto", serif;
-  text-transform: uppercase;
-  font-size: 30px;
-}
-
-.viewer .block .order .text {
-  margin: 10px;
-  font-size: 18px;
-  font-weight: 300;
-  font-family: "Roboto", serif;
-}
-
-.viewer .block .order .container {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.viewer .block .order .container .left {
-  display: inline-block;
+.order_line .infoBlock {
   width: 50%;
-  height: 90%;
+  height: 100%;
+  display: inline-block;
 }
 
-.viewer .block .order .container .left input {
+.order_line .infoBlock .text {
+  width: 100%;
+  height: calc(100% - (5 * 40px));
+  font-size: 20px;
+  font-family: "Roboto", serif;
+  font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  word-wrap: break-word;
+  text-indent: 15px;
+}
+
+.order_line .infoBlock .option {
+  font-family: "Roboto", serif;
+  width: 100%;
+  background-color: #b93535;
+  height: 40px;
+  font-size: 30px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #f1f1f1;
+  cursor: pointer;
+  text-indent: 10px;
+}
+
+.order_line .infoBlock .option:hover {
+  background-color: #7e3131;
+}
+
+.order_line .orderBlock {
+  width: 50%;
+  background-color: white;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+}
+
+.order_line .orderBlock select {
   border: 1px solid #535353;
   margin: 5px 5px;
   text-decoration: none;
@@ -368,7 +339,36 @@ header .menu-info .menu .element a:hover {
   font-family: "Roboto", serif;
 }
 
-.viewer .block .order .container .left .btn {
+.order_line .orderBlock .mainChoser {
+  width: 100%;
+  height: 60%;
+}
+
+.order_line .orderBlock .mainChoser input {
+  border: 1px solid #535353;
+  margin: 5px 5px;
+  text-decoration: none;
+  width: 90%;
+  height: 30px;
+  border-radius: 7px;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "Roboto", serif;
+}
+
+.order_line input {
+  border: 1px solid #535353;
+  margin: 5px 5px;
+  text-decoration: none;
+  width: 90%;
+  height: 30px;
+  border-radius: 7px;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "Roboto", serif;
+}
+
+.order_line .btn {
   outline: none;
   border: 1px solid #ff3300;
   background-color: #d44b4b;
@@ -384,42 +384,9 @@ header .menu-info .menu .element a:hover {
           transition-duration: 0.4s;
 }
 
-.viewer .block .order .container .left .btn:hover {
+.order_line .btn:hover {
   cursor: pointer;
   background-color: #ff1414;
   border: 1px solid #ff4800;
-}
-
-.viewer .block .order .container .right {
-  display: inline-block;
-  width: 50%;
-  height: 60%;
-}
-
-.viewer .block .order .container .right input {
-  border: 1px solid #535353;
-  margin: 5px 5px;
-  text-decoration: none;
-  width: 90%;
-  height: 30px;
-  border-radius: 7px;
-  font-size: 18px;
-  font-weight: 300;
-  font-family: "Roboto", serif;
-}
-
-.viewer .block .order .container .right textarea {
-  border: 1px solid #535353;
-  font-weight: 300;
-  margin: 5px 5px;
-  text-decoration: none;
-  width: 90%;
-  height: 20%;
-  border-radius: 7px;
-  font-size: 18px;
-  word-wrap: break-word;
-  font-size: 18px;
-  font-family: "Roboto", serif;
-  resize: none;
 }
 /*# sourceMappingURL=order.css.map */
