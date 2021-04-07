@@ -390,7 +390,12 @@ header .menu-info .menu .element a:hover {
   transition: all .6s ease 0s;
 }
 
-.cat_block .block .cat p {
+.cat_block .block .cat:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.cat_block .block .cat a {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -403,6 +408,7 @@ header .menu-info .menu .element a:hover {
   font-size: 17px;
   line-height: 17px;
   height: 17px;
+  text-decoration: none;
 }
 
 .product_card_line {

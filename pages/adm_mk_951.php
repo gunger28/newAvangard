@@ -12,7 +12,7 @@
 <body>
     <div class="menu">
         <form method="POST">
-            <input class="textLabel" type="text" name="option" placeholder="Номер телефона">
+            <input class="label" type="text" name="option" placeholder="Номер телефона">
             <input type="submit" name="getUsers" value="Пользователи">
             <input type="submit" name="getOrders" value="Заказы">
             <input id="getStat" type="submit" name="getStatistics" value="Статистика">
@@ -26,7 +26,26 @@
     $Users_BTN = isset($_POST['getUsers']);
 
     if ($statistics_BTN) {
-        getStatistics($con);
+        getStatistics($con, 7);
+    }
+
+    $days_BTN = isset($_POST['days']);
+    $weeks_BTN = isset($_POST['weeks']);
+    $months_BTN = isset($_POST['months']);
+
+    if ($days_BTN) {
+        $duration = 1;
+        getStatistics($con, $duration);
+    }
+
+    if ($weeks_BTN) {
+        $duration = 7;
+        getStatistics($con, $duration);
+    }
+
+    if ($months_BTN) {
+        $duration = 30;
+        getStatistics($con, $duration);
     }
 
     if ($Orders_BTN) {
@@ -37,11 +56,13 @@
         getUsers($con);
     }
 
+
+
     function getOrders($con)
     {
 
         $option = $_POST['option'];
-        $query = 'SELECT name,mail,number,product,item,message,date,region
+        $query = 'SELECT name, number, mail,product,item,message,region,date
 FROM 
 users INNER JOIN orders ON users.id = orders.user_id';
         $option_string = "WHERE number = '$option'";
@@ -114,7 +135,7 @@ FROM users';
         };
     }
 
- 
+
     function drawTable_Visiters($col_names, $rows)
     {
         echo "<div class=\"legend\">";
@@ -162,28 +183,59 @@ FROM users';
          </p>";
     }
 
-    function drawDiv_statistics(){
-echo "
+    function drawDiv_statistics()
+    {
+        echo "
 <div id=\"graphs\" class=\"graphs\">
-<div id=\"conversion\" class=\"graphic\">
+<div id=\"conversion\" class=\"graphic\" style=\"width:20%\">
     
     </div>
-    <div id=\"systems\" class=\"graphic\">
+    <div id=\"systems\" class=\"graphic\" style=\"width:20%\">
     
 </div>
-<div id=\"amount_users\" class=\"graphic\">
+<div id=\"amount_users\" class=\"graphic\" style=\"width:60%\">
     
 </div>
 </div>
 ";
-
     }
 
-    function getStatistics($con)
+    function draw_statistic_btns()
     {
-drawDiv_statistics();
+        echo "
+        <form method=\"POST\" class=\"stat_menu_block\">
+            <input type=\"submit\" name=\"days\" value=\"\" style=\" background:url(/assets/admin/day.png) no-repeat; background-size: contain;  background-position: center;\">
+            <input type=\"submit\" name=\"weeks\" value=\"\" style=\" background:url(/assets/admin/week.png) no-repeat;  background-size: contain;  background-position: center;\">
+            <input type=\"submit\" name=\"months\" value=\"\" style=\" background:url(/assets/admin/month.png) no-repeat;  background-size: contain;  background-position: center;\">
+        </form>";
+    }
 
-        $query = "select name,location,browser,system,date,amount from visiters";
+    function draw_stat_modules($data)
+    {
+        echo "<div id=\"stat\" class=\"stat_modules_block\">";
+
+        foreach ($data as $module => $value) {
+            draw_module($module, $value);
+        }
+        echo "</div>";
+    }
+
+    function draw_module($img, $data_module)
+    {
+
+        echo "<div class=\"stat_module\">
+              <img src=\"" . $img . "\"> <p>"
+            . $data_module
+            . "</p></div>";
+    }
+
+    function getStatistics($con, $duration)
+    {
+        draw_statistic_btns();
+        drawDiv_statistics();
+
+
+        $query = "select name,location,browser,system,date,amount from visiters order by date desc";
 
         $getSUsers = mysqli_query($con, "select COUNT(*) as couter from visiters");
         $getSOrders = mysqli_query($con, "select COUNT(*) as couter from orders");
@@ -200,34 +252,62 @@ drawDiv_statistics();
         $phone_amount = mysqli_fetch_array($getPhones)['amount'];
         $unknown_sys = $Users_amount - $pc_amount - $phone_amount;
 
-        $conversion = round($Orders_amount / $Users_amount*100,1);
+
+        $weeks = get_sql_weeks($con, $duration);
+        $date_weeks = get_date_weeks($duration);
+
+        $conversion = round($Orders_amount / $Users_amount * 100, 1);
         $visiters = mysqli_query($con, $query);
         $statistics = array(
-            "Посещений" => $Visisters_amount,
-            "Пользователи" => $Users_amount,
-            "Заказы" => $Orders_amount,
-            "Конверсия" => "$conversion %",
             "Компьютеры" => $pc_amount,
             "Телефоны" => $phone_amount,
-            "Неопределённые" => $unknown_sys
+            "Неопределённые" => $unknown_sys,
+            "Новые пользователи за неделю" =>  $weeks[0],
+            "Новые пользователи за 2 неделю" => $weeks[1],
+            "Новые пользователи за 3 неделю" => $weeks[2],
+            "Новые пользователи за 4 неделю" => $weeks[3]
         );
+
+        $data_modules = array(
+            "/assets/admin/looks.png" => $Visisters_amount,
+            "/assets/admin/users.png" => $Users_amount,
+            "/assets/admin/orders.png" => $Orders_amount,
+            "/assets/admin/convers.png" => "$conversion %"
+        );
+
+
+        draw_stat_modules($data_modules);
+
+        $today = date("d-m");
+
 
         $graph_data = array(
             "Посетители" => $Users_amount,
             "Заказы" => $Orders_amount,
-            "Компьютеры" => $pc_amount,
-            "Телефоны" => $phone_amount,
-            "Неопределённые" => $unknown_sys
+            "Комп." => $pc_amount,
+            "Тел." => $phone_amount,
+            "Неопред." => $unknown_sys,
+            "$date_weeks[3] - $date_weeks[2]" => $weeks[3],
+            "$date_weeks[2] - $date_weeks[1]" => $weeks[2],
+            "$date_weeks[1] - $date_weeks[0]" => $weeks[1],
+            "$date_weeks[0] - $today" => $weeks[0]
+
         );
 
+        //if($days_BTN){
         foreach ($statistics as $statistic => $value) {
 
             drawRow_Statistics($statistic, $value);
         };
+        // }
+
+
 
         $visitersCol_names = array(
             "ИМЯ", "РЕГИОН", "Браузер", "Система ", "ДАТА ", "Посещений "
         );
+
+
         drawTable_Visiters($visitersCol_names, $visiters);
         drawGrap_dataSet($graph_data);
     }
@@ -242,6 +322,42 @@ drawDiv_statistics();
         };
     }
 
+    function get_date_weeks($duration)
+    {
+        $date_weeks = array();
+
+        for ($i = 1; $i < 5; $i++) {
+            $date = ($duration) * $i;
+            $date = "-$date days";
+            $week = date('Y-m-d', strtotime($date, strtotime(date("Y-m-d"))));
+            $week = date_create($week)->Format('d.m');
+            array_push($date_weeks, $week);
+            echo  $date_weeks[$i];
+        }
+
+        return $date_weeks;
+    }
+
+
+    function get_sql_weeks($con, $duration)
+    {
+        $weeks = array();
+        $sql_weeks = array();
+
+        for ($i = 1; $i < 5; $i++) {
+            $days_for_week = $duration * $i;
+            $days_for_last_week = $days_for_week - $duration+1;
+            array_push($sql_weeks, mysqli_query($con, "select count(name) as amount from visiters WHERE date >= DATE_SUB(CURRENT_DATE, INTERVAL $days_for_week DAY) and date <= DATE_SUB(CURRENT_DATE, INTERVAL $days_for_last_week DAY)"));
+//            echo "$days_for_week :: $days_for_last_week \\";
+        }
+
+        foreach ($sql_weeks as $week) {
+            array_push($weeks,  mysqli_fetch_array($week)['amount']);
+        }
+
+
+        return $weeks;
+    }
     ?>
     <script src="https://www.google.com/jsapi"></script>
     <script src="/scripts/graphics.js"> </script>
