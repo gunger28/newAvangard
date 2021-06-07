@@ -5,10 +5,9 @@ setUser_data();
 
 function getUser_location()
 {
-  //  $ip = "77.222.106.52";
+ 
    $ip = getUser_ip();
     $geo = unserialize(file_get_contents('http://ip-api.com/php/'.$ip.'?lang=ru'));
-    //$country = $geo['country'];
     $city = $geo['city'];
     $region = $geo['regionName'];
     $string = "$city $region";
@@ -72,7 +71,7 @@ function getUser_browser()
 
 function setUser_data()
 {
-    //  $sys = $_SERVER['HTTP_USER_AGENT'];
+    
     $browser = getUser_browser();
     $loc = getUser_location();
     $system = getUser_system();

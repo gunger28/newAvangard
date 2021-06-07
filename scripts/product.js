@@ -232,7 +232,7 @@ phone.textContent = "8 913 007 61 93"
 }
 
 function sendForm_test() {
-  // img = document.getElementById("photo");
+ 
 type = "2";
   document
     .querySelector("#form")
@@ -242,10 +242,8 @@ type = "2";
 
 
 console.log(document.getElementById("photo").style.backgroundImage.replace(/(url\(|\)|")/g, ''));
-//alert(document.querySelectorAll('.input')[0]);
       event.preventDefault();
      
-     //site = "http://newmayak" + document.getElementById("photo").style.backgroundImage.replace(/(url\(|\)|")/g, '') ;
       site = " http://mayak-avangard.ru" + document.getElementById("photo").style.backgroundImage.replace(/(url\(|\)|")/g, '') ;
       const formData = new FormData();
       formData.append('type', type.toString());
@@ -256,7 +254,7 @@ formData.append('mail', document.querySelectorAll('.input')[2].value);
 formData.append('phone', document.querySelectorAll('.input')[1].value);
 formData.append('name', document.querySelectorAll('.input')[0].value );
 formData.append('img', site );
-//formData.append('img',  "http://newmayak/assets/img/Siropovar_3.png");
+
       
       url = "/php/mail.php";
       options = {
